@@ -1,0 +1,45 @@
+{
+  "name": "@yacosta738/ascii-progress-bar",
+  "description": "A simple ASCII progress bar for the terminal",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yacosta738/ascii-progress-bar.git"
+  },
+  "keywords": [
+    "web",
+    "component",
+    "components",
+    "web components",
+    "custom elements",
+    "progress",
+    "progress bar",
+    "ascii",
+    "ascii art"
+  ],
+  "bugs": {
+    "url": "https://github.com/yacosta738/ascii-progress-bar/issues"
+  },
+  "author": {
+    "name": "Yuniel Acosta",
+    "email": "stray-hefts.3o@icloud.com",
+    "url": "https://yunielacosta.com/"
+  },
+  "homepage": "https://github.com/yacosta738/ascii-progress-bar#readme",
+  "devDependencies": {
+    "tsup": "^7.0.0",
+    "vitest": "^0.34.0"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "license": "MIT"
+}
