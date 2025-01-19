@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "preinstall": "pnpm run build:packages",
-    "build": "pnpm -r build",
+    "build": "astro build && pnpm -r build",
     "build:packages": "pnpm --filter './packages/**' build",
     "test": "pnpm -r test",
     "dev": "pnpm run build:packages && astro dev",
