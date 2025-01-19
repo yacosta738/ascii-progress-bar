@@ -4,10 +4,10 @@ import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://yacosta738.github.io',
-  base: "/ascii-progress-bar/",
+  site: "https://yacosta738.github.io",
+  base: "ascii-progress-bar",
   image: {
-    service: passthroughImageService()
+    service: passthroughImageService(),
   },
   integrations: [
     starlight({
@@ -29,11 +29,12 @@ export default defineConfig({
             { label: "All Examples", slug: "examples/all" },
             { label: "Console Example", slug: "examples/console" },
             { label: "Web Example", slug: "examples/web-component" },
-			{ label: "Customization", items:[
-				{ label: "Custom Characters", slug: "examples/chars" },
-			] },
+            {
+              label: "Customization",
+              items: [{ label: "Custom Characters", slug: "examples/chars" }],
+            },
           ],
-        }
+        },
       ],
     }),
   ],

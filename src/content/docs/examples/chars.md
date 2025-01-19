@@ -6,13 +6,12 @@ banner:
     This library is in beta and under active development. Please report any issues or suggestions on <a href="https://github.com/yacosta738/ascii-progress-bar/issues" target="_blank">GitHub</a>.
 ---
 
-# Introduction
-
 The ASCII Progress Bar allows you to customize the characters used to render the progress bar. This can be useful if you want to match the style of the progress bar with your application's design.
 
 ## Predefined Patterns
 
 Below are the built-in patterns you can use:
+
 | Pattern  | Empty | Filled | Length | Description                       |
 |----------|-------|--------|--------|-----------------------------------|
 | Default  | □     | ■      | 10     | Classic block-based style.        |
@@ -27,6 +26,7 @@ Below are the built-in patterns you can use:
 ## Custom Patterns
 
 You can create your own custom patterns using the `addPattern` method. A pattern consists of three properties:
+
 - `empty`: The character used for the unfilled portion
 - `filled`: The character used for the filled portion
 - `length`: The total length of the progress bar

@@ -6,8 +6,6 @@ banner:
     This library is in beta and under active development. Please report any issues or suggestions on <a href="https://github.com/yacosta738/ascii-progress-bar/issues" target="_blank">GitHub</a>.
 ---
 
-# Console Usage Examples
-
 The ASCII Progress Bar can be used in Node.js console applications. Here are several examples showing different ways to use it.
 
 ## Basic Usage

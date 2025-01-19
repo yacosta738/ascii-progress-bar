@@ -6,8 +6,6 @@ banner:
     This library is in beta and under active development. Please report any issues or suggestions on <a href="https://github.com/yacosta738/ascii-progress-bar/issues" target="_blank">GitHub</a>.
 ---
 
-# Web Component Usage
-
 The ASCII Progress Bar can be used as a Web Component in your HTML applications. Here are several examples showing different ways to integrate it.
 
 ## Basic Installation
