@@ -25,6 +25,18 @@ importers:
         specifier: ^5.0.0
         version: 5.7.3
 
+  examples/basic:
+    dependencies:
+      '@yacosta738/ascii-progress-bar':
+        specifier: workspace:*
+        version: link:../../packages/ascii-progress-bar
+
+  examples/console:
+    dependencies:
+      '@yacosta738/ascii-progress-bar':
+        specifier: workspace:*
+        version: link:../../packages/ascii-progress-bar
+
   packages/ascii-progress-bar:
     devDependencies:
       tsup:

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Demo of ascii-progress-bar Web Component" />
+    <title>ASCII Progress Bar Demo</title>
+    <style>
+      body {
+        font-family: monospace;
+        padding: 20px;
+      }
+      section {
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ASCII Progress Bar Demo</h1>
+  
+    <section>
+      <h2>Current Year Progress</h2>
+      <ascii-progress-bar id="year-progress" pattern="default"></ascii-progress-bar>
+    </section>
+  
+    <section>
+      <h2>Dynamic Counter (0% to 100%)</h2>
+      <ascii-progress-bar id="dynamic-progress" pattern="dots"></ascii-progress-bar>
+    </section>
+  
+    <section>
+      <h2>Custom Static Progress</h2>
+      <ascii-progress-bar progress="75" pattern="default"></ascii-progress-bar>
+    </section>
+    
+    <section>
+      <h2>Countdown Timer (5 minutes)</h2>
+      <ascii-progress-bar id="countdown-progress" pattern="hashes"></ascii-progress-bar>
+    </section>
+
+    <section>
+      <h2>Page Scroll Progress</h2>
+      <ascii-progress-bar id="scroll-progress" pattern="stars"></ascii-progress-bar>
+    </section>
+
+    <section>
+      <h2>Braille Style</h2>
+      <ascii-progress-bar progress="80" pattern="braille"></ascii-progress-bar>
+    </section>
+
+    <section>
+      <h2>Minimal Style</h2>
+      <ascii-progress-bar progress="50" pattern="minimal"></ascii-progress-bar>
+    </section>
+
+    <section>
+      <h2>Blocks Style</h2>
+      <ascii-progress-bar progress="60" pattern="blocks"></ascii-progress-bar>
+    </section>
+
+    <section style="height: 800px;">
+      <h2>Scroll down to test the progress bar above!</h2>
+      <p>This section is intentionally tall to enable scrolling.</p>
+    </section>
+  
+    <script>
+      // Current Year Progress
+      function updateYearProgress() {
+        const now = new Date();
+        const start = new Date(now.getFullYear(), 0, 1);
+        const end = new Date(now.getFullYear() + 1, 0, 1);
+        const progress = ((now - start) / (end - start)) * 100;
+        document.getElementById('year-progress').setAttribute('progress', progress.toFixed(2));
+      }
+      updateYearProgress();
+      setInterval(updateYearProgress, 60 * 60 * 1000); // Updates every hour
+  
+      // Dynamic Counter
+      let dynamicProgress = 0;
+      function updateDynamicProgress() {
+        dynamicProgress = (dynamicProgress + 1) % 101;
+        document.getElementById('dynamic-progress').setAttribute('progress', dynamicProgress);
+      }
+      setInterval(updateDynamicProgress, 100);
+
+      // Countdown Timer (5 minutes)
+      const totalTime = 5 * 60; // 5 minutes in seconds
+      let remainingTime = totalTime;
+      function updateCountdown() {
+        const progress = ((totalTime - remainingTime) / totalTime) * 100;
+        document.getElementById('countdown-progress').setAttribute('progress', progress.toFixed(2));
+        if (remainingTime > 0) remainingTime--;
+      }
+      setInterval(updateCountdown, 1000);
+
+      // Page Scroll Progress
+      function updateScrollProgress() {
+        const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (window.scrollY / windowHeight) * 100;
+        document.getElementById('scroll-progress').setAttribute('progress', progress.toFixed(2));
+      }
+      window.addEventListener('scroll', updateScrollProgress);
+      updateScrollProgress();
+    </script>
+    <script type="module">
+      import { AsciiProgressRenderer } from './index.js';
+      
+      // Console log examples
+      console.log('Console Demo:');
+      console.log('Default pattern:', AsciiProgressRenderer.render(75, 'default'));
+      console.log('Braille pattern:', AsciiProgressRenderer.render(80, 'braille'));
+      console.log('Minimal pattern:', AsciiProgressRenderer.render(50, 'minimal'));
+      console.log('Blocks pattern:', AsciiProgressRenderer.render(60, 'blocks'));
+    </script>
+  </body>
+</html>
+

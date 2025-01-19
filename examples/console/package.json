@@ -1,0 +1,25 @@
+{
+  "name": "console",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "progress",
+    "progress bar",
+    "ascii",
+    "ascii art",
+    "console"
+  ],
+  "author": {
+    "name": "Yuniel Acosta",
+    "email": "stray-hefts.3o@icloud.com",
+    "url": "https://yunielacosta.com/"
+  },
+  "dependencies": {
+    "@yacosta738/ascii-progress-bar": "workspace:*"
+  }
+}

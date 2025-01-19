@@ -1,4 +1,4 @@
-import { AsciiProgressRenderer } from './ascii-progress-renderer.js';
+import { AsciiProgressRenderer } from '@yacosta738/ascii-progress-bar';
 
 // Helper function to simulate delay
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
