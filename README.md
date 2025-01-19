@@ -35,14 +35,17 @@ Visit our [documentation site](https://ascii-progress-bar.vercel.app) for detail
 ## 🛠️ Development
 
 ```bash
-# Install dependencies
+# Install dependencies (this will automatically build the package first)
 pnpm install
 
 # Start development server
 pnpm dev
 
-# Build for production
+# Build packages and documentation
 pnpm build
+
+# Build only packages
+pnpm build:packages
 
 # Run tests
 pnpm test
