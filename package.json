@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "preinstall": "cd packages/ascii-progress-bar && pnpm install && pnpm build",
+    "preinstall": "pnpm run build:packages",
     "build": "pnpm -r build",
     "build:packages": "pnpm --filter './packages/**' build",
     "test": "pnpm -r test",
