@@ -1,36 +1,94 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: ASCII Progress Bar
+description: A lightweight and customizable progress bar component for the web
 template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Create beautiful ASCII progress bars with ease
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/ascii-bar-logo.webp
+    alt: ASCII Progress Bar logo
   actions:
-    - text: Installation Guide
+    - text: Get Started
       link: /guides/installation/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/yacosta738/ascii-progress-bar
+      icon: github
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import PackageManagerTabs from '~/components/tabs/PackageManagerTabs.astro';
+import AsciiProgressBarDemo from '~/components/AsciiProgressBarDemo.astro';
 
-## Next steps
+## Features
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+  <Card title="Lightweight" icon="rocket">
+    Zero dependencies, only ~2KB gzipped
+  </Card>
+  <Card title="Customizable" icon="pencil">
+    Multiple built-in patterns and custom character support
+  </Card>
+  <Card title="Web Component" icon="puzzle">
+    Works with any framework or vanilla JavaScript
+  </Card>
+  <Card title="TypeScript" icon="document">
+    Full TypeScript support with type definitions included
+  </Card>
+</CardGrid>
+
+## Quick Start
+
+<PackageManagerTabs>
+      <Fragment slot="npm">
+      ```shell
+      # create a new project with npm
+      npm install ascii-progress-bar
+      ```
+      </Fragment>
+      <Fragment slot="pnpm">
+      ```shell
+      # create a new project with pnpm
+      pnpm add ascii-progress-bar
+      ```
+      </Fragment>
+      <Fragment slot="yarn">
+      ```shell
+      # create a new project with yarn
+      yarn add ascii-progress-bar
+      ```
+      </Fragment>
+    </PackageManagerTabs>
+
+## Usage Example
+
+```html
+<ascii-progress-bar progress="75" pattern="blocks"></ascii-progress-bar>
+
+<script type="module">
+  import { AsciiProgressBar } from '@yacosta738/ascii-progress-bar';
+  // The component will auto-register
+</script>
+```
+
+## Live Demo
+
+Try different patterns:
+
+<AsciiProgressBarDemo />
+
+## Why ASCII Progress Bar?
+
+<CardGrid>
+  <Card title="Framework Agnostic" icon="puzzle">
+    Built as a Web Component, works everywhere - React, Vue, Angular, or plain HTML
+  </Card>
+  <Card title="Easy to Style" icon="setting">
+    Multiple built-in patterns and support for custom characters
+  </Card>
+  <Card title="Accessible" icon="approve-check">
+    ARIA attributes for accessibility and keyboard navigation
+  </Card>
 </CardGrid>

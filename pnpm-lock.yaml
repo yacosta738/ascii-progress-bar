@@ -37,6 +37,12 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ascii-progress-bar
 
+  examples/customization:
+    dependencies:
+      '@yacosta738/ascii-progress-bar':
+        specifier: workspace:*
+        version: link:../../packages/ascii-progress-bar
+
   packages/ascii-progress-bar:
     devDependencies:
       tsup:

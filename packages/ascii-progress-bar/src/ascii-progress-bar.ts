@@ -41,7 +41,7 @@ export class AsciiProgressBar extends HTMLElement {
     }
   }
 
-  private render(): void {
+  public render(): void {
     const bar = AsciiProgressRenderer.render(this.progress, this.pattern);
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `<pre>${bar}</pre>`;

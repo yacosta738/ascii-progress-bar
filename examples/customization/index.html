@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Demo of ascii-progress-bar Web Component (Customization)" />
+    <title>ASCII Progress Bar Customization Demo</title>
+    <style>
+      body {
+        font-family: monospace;
+        padding: 20px;
+      }
+      section {
+        margin-bottom: 30px;
+      }
+    </style>
+    <script type="module">
+      import { AsciiProgressBar } from './index.js';
+      
+      customElements.whenDefined('ascii-progress-bar').then(() => {
+        // Arrows pattern
+        AsciiProgressBar.addPattern('arrows', {
+          empty: '→',
+          filled: '⇒',
+          length: 15
+        });
+
+        // Emoji pattern
+        AsciiProgressBar.addPattern('emoji', {
+          empty: '⚪',
+          filled: '🟢',
+          length: 8
+        });
+
+        // Re-render existing components
+        document.querySelectorAll('ascii-progress-bar').forEach(bar => bar.render());
+      });
+    </script>
+  </head>
+  <body>
+    <h1>ASCII Progress Bar Customization Demo</h1>
+    <section>
+      <h2>Arrows Pattern:</h2>
+      <ascii-progress-bar progress="75" pattern="arrows"></ascii-progress-bar>
+    </section>
+    <section>
+      <h2>Emoji Pattern:</h2>
+      <ascii-progress-bar progress="60" pattern="emoji"></ascii-progress-bar>
+    </section>
+  </body>
+</html>
+

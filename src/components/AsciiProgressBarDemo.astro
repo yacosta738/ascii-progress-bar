@@ -1,0 +1,81 @@
+---
+
+---
+
+<div class="demo-container">
+  <div class="progress-grid">
+      <section>
+          <h5>Year Progress</h5>
+          <ascii-progress-bar id="year-progress" pattern="default"></ascii-progress-bar>
+      </section>
+
+      <section>
+          <h5>Default Pattern (75%)</h5>
+          <ascii-progress-bar progress="75" pattern="default"></ascii-progress-bar>
+      </section>
+
+      <section>
+          <h5>Dots Pattern (60%)</h5>
+          <ascii-progress-bar progress="60" pattern="dots"></ascii-progress-bar>
+      </section>
+
+      <section>
+          <h5>Blocks Pattern (85%)</h5>
+          <ascii-progress-bar progress="85" pattern="blocks"></ascii-progress-bar>
+      </section>
+
+      <section>
+          <h5>Minimal Pattern (45%)</h5>
+          <ascii-progress-bar progress="45" pattern="minimal"></ascii-progress-bar>
+      </section>
+
+      <section>
+          <h5>Custom Pattern (45%)</h5>
+          <ascii-progress-bar progress="45" pattern="customPattern"></ascii-progress-bar>
+      </section>
+  </div>
+</div>
+
+<style>
+  .demo-container {
+      font-family: monospace;
+      padding: 20px;
+  }
+  .progress-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+  }
+  section {
+      margin: 0;
+  }
+</style>
+
+<script>
+    import { AsciiProgressBar } from '@yacosta738/ascii-progress-bar/browser';
+
+    // Year Progress Logic
+    function updateYearProgress() {
+        const now = new Date();
+        const start = new Date(now.getFullYear(), 0, 1);
+        const end = new Date(now.getFullYear() + 1, 0, 1);
+        const progress = ((now.getTime() - start.getTime()) / (end.getTime() - start.getTime())) * 100;
+        const yearProgressBar = document.getElementById('year-progress');
+        if (yearProgressBar) {
+            yearProgressBar.setAttribute('progress', progress.toFixed(2));
+        }
+    }
+    updateYearProgress();
+    setInterval(updateYearProgress, 60 * 60 * 1000); // Updates every hour
+
+    // Custom Pattern Logic
+    customElements.whenDefined('ascii-progress-bar').then(() => {
+    AsciiProgressBar.addPattern('customPattern',{
+        empty: '░',
+        filled: '█',
+        length: 20
+    });
+     // Re-render existing components
+     document.querySelectorAll('ascii-progress-bar').forEach(bar => (bar as AsciiProgressBar).render());
+    });
+  </script>
