@@ -5,7 +5,7 @@ import starlight from "@astrojs/starlight";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://yacosta738.github.io',
-  base: "ascii-progress-bar",
+  base: "/ascii-progress-bar/",
   image: {
     service: passthroughImageService()
   },
