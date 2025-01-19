@@ -1,61 +1,3 @@
-# ASCII Progress Bar
-
-A lightweight and customizable ASCII progress bar web component for modern web applications.
-
-[![Built with TypeScript](https://img.shields.io/badge/Built%20with-TypeScript-blue)](https://www.typescriptlang.org/)
-[![npm version](https://badge.fury.io/js/@yacosta738%2Fascii-progress-bar.svg)](https://www.npmjs.com/package/@yacosta738/ascii-progress-bar)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-## 🚀 Quick Start
-
-```bash
-# npm
-npm install @yacosta738/ascii-progress-bar
-
-# yarn
-yarn add @yacosta738/ascii-progress-bar
-
-# pnpm
-pnpm add @yacosta738/ascii-progress-bar
-```
-
-## 📚 Documentation
-
-Visit our [documentation site](https://ascii-progress-bar.vercel.app) for detailed usage instructions and examples.
-
-## 🎯 Features
-
-- 📦 Lightweight and dependency-free
-- 🎨 Multiple built-in patterns
-- ✨ Customizable patterns
-- 📱 Responsive and accessible
-- 🔧 Easy to integrate
-- 📝 TypeScript support
-
-## 🛠️ Development
-
-```bash
-# Install dependencies
-pnpm install
-
-# Start development server
-pnpm dev
-
-# Build for production
-pnpm build
-
-# Run tests
-pnpm test
-```
-
-## 🧪 Try it Online
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/yacosta738/ascii-progress-bar)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github.com/yacosta738/ascii-progress-bar)
-
-## 📦 Project Structure
-
-```
 .
 ├── README.md
 ├── astro.config.mjs
@@ -112,12 +54,5 @@ pnpm test
 │   ├── content.config.ts
 │   └── layouts
 └── tsconfig.json
-```
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+19 directories, 37 files

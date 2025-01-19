@@ -8,7 +8,8 @@
     "dev": "astro dev",
     "start": "astro dev",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "clean": "pnpm -r clean"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.31.1",
