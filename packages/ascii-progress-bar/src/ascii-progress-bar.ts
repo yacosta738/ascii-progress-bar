@@ -6,7 +6,7 @@ export class AsciiProgressBar extends HTMLElement {
   private pattern: string;
 
   static register(tagName?: string): void {
-    if ("customElements" in window) {
+    if ("customElements" in window && !customElements.get(tagName || "ascii-progress-bar")) {
       customElements.define(tagName || "ascii-progress-bar", AsciiProgressBar);
     }
   }
