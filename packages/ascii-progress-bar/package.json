@@ -48,6 +48,7 @@
   "homepage": "https://github.com/yacosta738/ascii-progress-bar#readme",
   "devDependencies": {
     "tsup": "^7.0.0",
+    "jsdom": "^18.0.0",
     "vitest": "^0.34.0"
   },
   "files": [

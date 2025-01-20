@@ -1,4 +1,4 @@
-import { Pattern, Patterns } from './types';
+import type { Pattern, Patterns } from './types';
 
 export class AsciiProgressRenderer {
   private static patternsMap = new Map<string, Pattern>();

@@ -1,12 +1,12 @@
-name: Publish Package
+name: Pull Request Checks
 
 on:
-  release:
-    types: [created]
-  workflow_dispatch:
+  pull_request:
+    branches: [ main ]
+    types: [opened, synchronize, reopened]
 
 jobs:
-  publish:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,7 +16,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          registry-url: 'https://registry.npmjs.org'
 
       - name: Setup PNPM
         uses: pnpm/action-setup@v2
@@ -45,12 +44,12 @@ jobs:
         working-directory: packages/ascii-progress-bar
         run: pnpm test
 
+      - name: Type check
+        run: pnpm astro check
+
       - name: Build package
         working-directory: packages/ascii-progress-bar
         run: pnpm build
 
-      - name: Publish package
-        working-directory: packages/ascii-progress-bar
-        run: pnpm publish --no-git-checks --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Build docs
+        run: pnpm build

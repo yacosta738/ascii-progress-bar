@@ -1,12 +1,12 @@
 import { AsciiProgressRenderer } from './ascii-progress-renderer';
-import { Pattern } from './types';
+import type { Pattern } from './types';
 
 export class AsciiProgressBar extends HTMLElement {
   private progress: number;
   private pattern: string;
 
   static register(tagName?: string): void {
-    if ("customElements" in window) {
+    if ("customElements" in window && !customElements.get(tagName || "ascii-progress-bar")) {
       customElements.define(tagName || "ascii-progress-bar", AsciiProgressBar);
     }
   }
