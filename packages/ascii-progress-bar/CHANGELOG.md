@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/yacosta738/ascii-progress-bar/compare/v1.1.0...v1.2.0) (2025-01-20)
+
+
+### Features
+
+* Add pnpm caching to deploy workflow for improved performance ([3deb106](https://github.com/yacosta738/ascii-progress-bar/commit/3deb106bb55eea809f3765e690eef1e4ef4812d6))
+
 # [1.1.0](https://github.com/yacosta738/ascii-progress-bar/compare/v1.0.0...v1.1.0) (2025-01-20)
 
 
