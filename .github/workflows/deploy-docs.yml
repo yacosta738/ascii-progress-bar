@@ -30,6 +30,12 @@ jobs:
           pnpm store path
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
+      - name: Verify store path exists
+        run: |
+          if [ ! -d "${{ steps.pnpm-cache.outputs.STORE_PATH }}" ]; then
+            mkdir -p "${{ steps.pnpm-cache.outputs.STORE_PATH }}"
+          fi
+
       - name: Setup pnpm cache
         uses: actions/cache@v4
         with:
