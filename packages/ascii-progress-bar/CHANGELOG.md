@@ -1,3 +1,16 @@
+# [1.1.0](https://github.com/yacosta738/ascii-progress-bar/compare/v1.0.0...v1.1.0) (2025-01-20)
+
+
+### Bug Fixes
+
+* Update Biome setup actions and improve linting commands ([82e4bdf](https://github.com/yacosta738/ascii-progress-bar/commit/82e4bdf6eeef2989f6d5e042021cd4ec388a6f62))
+
+
+### Features
+
+* Add Biome configuration files and update package scripts ([f7c2f48](https://github.com/yacosta738/ascii-progress-bar/commit/f7c2f48afecf1e8e7eb5b37e7086d8e346e24e11))
+* Add biome to project ([dc88313](https://github.com/yacosta738/ascii-progress-bar/commit/dc8831379ad4c1431bfde6978b7b9a2fdd324289))
+
 # 1.0.0 (2025-01-20)
 
 
