@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { AsciiProgressBar } from '../src/ascii-progress-bar';
-import { Pattern } from '../src/types';
+import type { Pattern } from '../src/types';
 
 describe('AsciiProgressBar', () => {
   beforeEach(() => {

@@ -1,5 +1,5 @@
 import { AsciiProgressRenderer } from './ascii-progress-renderer';
-import { Pattern } from './types';
+import type { Pattern } from './types';
 
 export class AsciiProgressBar extends HTMLElement {
   private progress: number;

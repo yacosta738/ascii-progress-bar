@@ -34,6 +34,9 @@ jobs:
         working-directory: packages/ascii-progress-bar
         run: pnpm test
 
+      - name: Type check
+        run: pnpm astro check
+
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         # with:

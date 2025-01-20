@@ -44,6 +44,9 @@ jobs:
         working-directory: packages/ascii-progress-bar
         run: pnpm test
 
+      - name: Type check
+        run: pnpm astro check
+
       - name: Build package
         working-directory: packages/ascii-progress-bar
         run: pnpm build
