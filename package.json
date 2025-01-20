@@ -1,6 +1,6 @@
 {
   "name": "@yacosta738/ascii-progress-bar-documents",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "preinstall": "pnpm run build:packages",
