@@ -1,7 +1,7 @@
 {
   "name": "@yacosta738/ascii-progress-bar",
   "description": "A simple ASCII progress bar for the terminal",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
