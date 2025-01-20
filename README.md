@@ -2,6 +2,7 @@
 
 A lightweight and customizable ASCII progress bar web component for modern web applications.
 
+[![Deploy Docs to GitHub Pages](https://github.com/yacosta738/ascii-progress-bar/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/yacosta738/ascii-progress-bar/actions/workflows/deploy-docs.yml)
 [![Built with TypeScript](https://img.shields.io/badge/Built%20with-TypeScript-blue)](https://www.typescriptlang.org/)
 [![npm version](https://badge.fury.io/js/@yacosta738%2Fascii-progress-bar.svg)](https://www.npmjs.com/package/@yacosta738/ascii-progress-bar)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
