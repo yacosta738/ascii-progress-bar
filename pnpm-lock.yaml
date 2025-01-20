@@ -24,24 +24,6 @@ importers:
         specifier: ^0.33.5
         version: 0.33.5
     devDependencies:
-      '@semantic-release/changelog':
-        specifier: ^6.0.3
-        version: 6.0.3(semantic-release@23.1.1(typescript@5.7.3))
-      '@semantic-release/git':
-        specifier: ^10.0.1
-        version: 10.0.1(semantic-release@23.1.1(typescript@5.7.3))
-      '@semantic-release/github':
-        specifier: ^9.2.6
-        version: 9.2.6(semantic-release@23.1.1(typescript@5.7.3))
-      '@semantic-release/npm':
-        specifier: ^11.0.2
-        version: 11.0.3(semantic-release@23.1.1(typescript@5.7.3))
-      '@semantic-release/release-notes-generator':
-        specifier: ^12.1.0
-        version: 12.1.0(semantic-release@23.1.1(typescript@5.7.3))
-      semantic-release:
-        specifier: ^23.0.2
-        version: 23.1.1(typescript@5.7.3)
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
@@ -66,9 +48,27 @@ importers:
 
   packages/ascii-progress-bar:
     devDependencies:
+      '@semantic-release/changelog':
+        specifier: ^6.0.3
+        version: 6.0.3(semantic-release@23.1.1(typescript@5.7.3))
+      '@semantic-release/git':
+        specifier: ^10.0.1
+        version: 10.0.1(semantic-release@23.1.1(typescript@5.7.3))
+      '@semantic-release/github':
+        specifier: ^9.2.6
+        version: 9.2.6(semantic-release@23.1.1(typescript@5.7.3))
+      '@semantic-release/npm':
+        specifier: ^11.0.2
+        version: 11.0.3(semantic-release@23.1.1(typescript@5.7.3))
+      '@semantic-release/release-notes-generator':
+        specifier: ^12.1.0
+        version: 12.1.0(semantic-release@23.1.1(typescript@5.7.3))
       jsdom:
         specifier: ^26.0.0
         version: 26.0.0
+      semantic-release:
+        specifier: ^23.0.2
+        version: 23.1.1(typescript@5.7.3)
       tsup:
         specifier: ^8.3.5
         version: 8.3.5(postcss@8.5.1)(typescript@5.7.3)(yaml@2.7.0)
