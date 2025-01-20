@@ -27,7 +27,6 @@ jobs:
         id: pnpm-cache
         shell: bash
         run: |
-          echo "🟢 pnpm store path: $(pnpm store path)"
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
       - name: Setup pnpm cache
@@ -37,9 +36,6 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies
-        run: pnpm install
 
       - name: Setup Biome
         uses: biomejs/setup-biome@v2
