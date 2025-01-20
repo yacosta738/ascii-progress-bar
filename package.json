@@ -11,7 +11,9 @@
     "start": "pnpm run dev",
     "preview": "astro preview",
     "astro": "astro",
-    "clean": "pnpm -r clean"
+    "clean": "pnpm -r clean",
+    "format": "biome format",
+    "lint": "biome check"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -21,7 +23,8 @@
     "sharp": "^0.33.5"
   },
   "devDependencies": {
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "biome": "^1.0.0"
   },
   "packageManager": "pnpm@10.0.0+sha512.b8fef5494bd3fe4cbd4edabd0745df2ee5be3e4b0b8b08fa643aa3e4c6702ccc0f00d68fa8a8c9858a735a0032485a44990ed2810526c875e416f001b17df12b"
 }

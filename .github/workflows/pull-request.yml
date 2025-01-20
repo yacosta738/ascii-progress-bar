@@ -40,6 +40,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Setup Biome
+        uses: biomejs/biome-action@v1
+
+      - name: Run Biome Check
+        run: pnpm lint
+
       - name: Run tests
         working-directory: packages/ascii-progress-bar
         run: pnpm test
