@@ -1,0 +1,96 @@
+---
+title: ASCII Progress Bar
+description: Un componente de barra de progreso ligero y personalizable para la web
+template: splash
+hero:
+  tagline: Crea hermosas barras de progreso ASCII fácilmente
+  image:
+    file: ../../../assets/ascii-bar-logo.webp
+    alt: Logo de ASCII Progress Bar
+  actions:
+    - text: Comenzar
+      link: /ascii-progress-bar/es/guides/installation/
+      icon: right-arrow
+      variant: primary
+    - text: Ver en GitHub
+      link: https://github.com/yacosta738/ascii-progress-bar
+      icon: github
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import PackageManagerTabs from '~/components/tabs/PackageManagerTabs.astro';
+import AsciiProgressBarDemo from '~/components/AsciiProgressBarDemo.astro';
+
+## Características
+
+<CardGrid stagger>
+  <Card title="Ligero" icon="rocket">
+    Sin dependencias, solo ~2KB comprimido
+  </Card>
+  <Card title="Personalizable" icon="pencil">
+    Múltiples patrones incorporados y soporte para caracteres personalizados
+  </Card>
+  <Card title="Componente Web" icon="puzzle">
+    Funciona con cualquier framework o JavaScript vanilla
+  </Card>
+  <Card title="TypeScript" icon="document">
+    Soporte completo de TypeScript con definiciones de tipos incluidas
+  </Card>
+</CardGrid>
+
+## Inicio Rápido
+
+<PackageManagerTabs>
+      <Fragment slot="npm">
+      ```shell
+      # create a new project with npm
+      npm install ascii-progress-bar
+      ```
+      </Fragment>
+      <Fragment slot="pnpm">
+      ```shell
+      # create a new project with pnpm
+      pnpm add ascii-progress-bar
+      ```
+      </Fragment>
+      <Fragment slot="yarn">
+      ```shell
+      # create a new project with yarn
+      yarn add ascii-progress-bar
+      ```
+      </Fragment>
+    </PackageManagerTabs>
+
+## Ejemplo de Uso
+
+```html
+<ascii-progress-bar progress="75" pattern="blocks"></ascii-progress-bar>
+
+<script type="module">
+  import { AsciiProgressBar } from '@yacosta738/ascii-progress-bar';
+  // El componente se registrará automáticamente
+</script>
+```
+
+## Demostración en Vivo
+
+Prueba diferentes patrones:
+
+<AsciiProgressBarDemo />
+
+Para más ejemplos y uso detallado, consulta la [documentación](/ascii-progress-bar/es/examples/all/).
+
+## ¿Por qué ASCII Progress Bar?
+
+<CardGrid>
+  <Card title="Independiente del Framework" icon="puzzle">
+    Construido como Componente Web, funciona en todas partes - React, Vue, Angular o HTML plano
+  </Card>
+  <Card title="Fácil de Estilizar" icon="setting">
+    Múltiples patrones incorporados y soporte para caracteres personalizados
+  </Card>
+  <Card title="Accesible" icon="approve-check">
+    Atributos ARIA para accesibilidad y navegación por teclado
+  </Card>
+</CardGrid>

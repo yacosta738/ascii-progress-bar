@@ -12,26 +12,79 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "ASCII Progress Bar",
+       // Set English as the default language for this site.
+       defaultLocale: 'en',
+       locales: {
+         // English docs in `src/content/docs/en/`
+         en: {
+           label: 'English',
+         },
+         // Spanish docs in `src/content/docs/es/`
+         es: {
+           label: 'Español',
+         }
+       },
       social: {
         github: "https://github.com/yacosta738/ascii-progress-bar",
       },
       sidebar: [
         {
           label: "Guides",
+          translations: {
+            es: "Guías"
+          },
           items: [
             // Each item here is one entry in the navigation menu.
-            { label: "Installation Guide", slug: "guides/installation" },
+            { 
+              label: "Installation Guide",
+              translations: {
+                es: "Guía de Instalación"
+              },
+              slug: "guides/installation" 
+            },
           ],
         },
         {
           label: "Examples",
+          translations: {
+            es: "Ejemplos"
+          },
           items: [
-            { label: "All Examples", slug: "examples/all" },
-            { label: "Console Example", slug: "examples/console" },
-            { label: "Web Example", slug: "examples/web-component" },
+            { 
+              label: "All Examples",
+              translations: {
+                es: "Todos los Ejemplos"
+              },
+              slug: "examples/all" 
+            },
+            { 
+              label: "Console Example",
+              translations: {
+                es: "Ejemplo en Consola"
+              },
+              slug: "examples/console" 
+            },
+            { 
+              label: "Web Example",
+              translations: {
+                es: "Ejemplo Web"
+              },
+              slug: "examples/web-component" 
+            },
             {
               label: "Customization",
-              items: [{ label: "Custom Characters", slug: "examples/chars" }],
+              translations: {
+                es: "Personalización"
+              },
+              items: [
+                { 
+                  label: "Custom Characters",
+                  translations: {
+                    es: "Caracteres Personalizados"
+                  },
+                  slug: "examples/chars" 
+                }
+              ],
             },
           ],
         },

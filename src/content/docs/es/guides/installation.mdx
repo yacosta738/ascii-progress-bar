@@ -1,0 +1,142 @@
+---
+title: Instalar ascii-progress-bar
+sidebar:
+  label: Instalación
+description: 'Cómo instalar ascii-progress-bar y comenzar un nuevo proyecto.'
+i18nReady: true
+banner:
+  content: |
+    Esta librería está en beta y en desarrollo activo. Por favor, reporta cualquier problema o sugerencia en <a href="https://github.com/yacosta738/ascii-progress-bar/issues" target="_blank">GitHub</a>.
+---
+import { Tabs, TabItem, FileTree, CardGrid, LinkCard, Steps } from '@astrojs/starlight/components';
+import PackageManagerTabs from '~/components/tabs/PackageManagerTabs.astro';
+import ReadMore from '~/components/ReadMore.astro';
+
+La forma más fácil de comenzar a usar ascii-progress-bar es a través de tu gestor de paquetes preferido. La librería soporta entornos Node.js y puede ser integrada en cualquier proyecto JavaScript o TypeScript.
+
+### Prerrequisitos
+
+- **Node.js** - `v14.0.0` o superior
+- **Gestor de Paquetes** - npm, yarn, o pnpm
+
+### Instalación Rápida
+
+Elige tu gestor de paquetes preferido para instalar ascii-progress-bar:
+ <PackageManagerTabs>
+      <Fragment slot="npm">
+      ```shell
+      # create a new project with npm
+      npm install ascii-progress-bar
+      ```
+      </Fragment>
+      <Fragment slot="pnpm">
+      ```shell
+      # create a new project with pnpm
+      pnpm add ascii-progress-bar
+      ```
+      </Fragment>
+      <Fragment slot="yarn">
+      ```shell
+      # create a new project with yarn
+      yarn add ascii-progress-bar
+      ```
+      </Fragment>
+    </PackageManagerTabs>
+
+### Configuración Manual
+
+Si estás comenzando desde cero, sigue estos pasos:
+<Steps>
+1. Crea un nuevo directorio para tu proyecto:
+    ```bash
+    mkdir mi-proyecto-progress
+    cd mi-proyecto-progress
+    ```
+2. Inicializa tu proyecto:
+    <PackageManagerTabs>
+      <Fragment slot="npm">
+      ```shell
+      npm init -y
+      ```
+      </Fragment>
+      <Fragment slot="pnpm">
+      ```shell
+      pnpm init
+      ```
+      </Fragment>
+      <Fragment slot="yarn">
+      ```shell
+      yarn init -y
+      ```
+      </Fragment>
+    </PackageManagerTabs>
+3. Instala ascii-progress-bar:
+    <PackageManagerTabs>
+      <Fragment slot="npm">
+      ```shell
+      npm install ascii-progress-bar
+      ```
+      </Fragment>
+      <Fragment slot="pnpm">
+      ```shell
+      pnpm add ascii-progress-bar
+      ```
+      </Fragment>
+      <Fragment slot="yarn">
+      ```shell
+      yarn add ascii-progress-bar
+      ```
+      </Fragment>
+    </PackageManagerTabs>
+</Steps>
+
+### Uso Básico
+
+Después de la instalación, puedes importar y usar la librería en tu proyecto:
+
+```javascript
+import { AsciiProgressRenderer } from '@yacosta738/ascii-progress-bar';
+
+// Helper function to simulate delay
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+// Static demo
+console.log('\nStatic demonstrations:');
+console.log('Default:  ', AsciiProgressRenderer.render(75, 'default'));
+console.log('Dots:     ', AsciiProgressRenderer.render(60, 'dots'));
+console.log('Stars:    ', AsciiProgressRenderer.render(40, 'stars'));
+console.log('Braille:  ', AsciiProgressRenderer.render(80, 'braille'));
+console.log('Minimal:  ', AsciiProgressRenderer.render(50, 'minimal'));
+console.log('Blocks:   ', AsciiProgressRenderer.render(65, 'blocks'));
+
+// Animated demo
+async function animateProgress() {
+  console.log('\nAnimated demo:');
+  for (let i = 0; i <= 100; i += 5) {
+    // Clear previous line
+    process.stdout.clearLine();
+    process.stdout.cursorTo(0);
+    // Render the bar
+    process.stdout.write(AsciiProgressRenderer.render(i, 'blocks'));
+    await sleep(200);
+  }
+  console.log('\n');
+}
+
+// Run animated demo
+animateProgress();
+```
+
+### Siguientes Pasos
+
+Ahora que tienes ascii-progress-bar instalado, puedes:
+
+1. Probar nuestros [ejemplos](/ascii-progress-bar/es/examples/all) para ver diferentes casos de uso
+
+### Solución de Problemas
+
+Si encuentras algún problema durante la instalación, asegúrate de que:
+
+- Tu versión de Node.js es compatible
+- Tienes los permisos de escritura adecuados en el directorio del proyecto
+- Tu gestor de paquetes está actualizado
