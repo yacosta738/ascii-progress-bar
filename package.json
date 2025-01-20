@@ -1,6 +1,6 @@
 {
   "name": "@yacosta738/ascii-progress-bar-documents",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "preinstall": "pnpm run build:packages",
@@ -21,13 +21,7 @@
     "sharp": "^0.33.5"
   },
   "devDependencies": {
-    "typescript": "^5.7.3",
-    "semantic-release": "^23.0.2",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^9.2.6",
-    "@semantic-release/npm": "^11.0.2",
-    "@semantic-release/release-notes-generator": "^12.1.0"
+    "typescript": "^5.7.3"
   },
   "packageManager": "pnpm@10.0.0+sha512.b8fef5494bd3fe4cbd4edabd0745df2ee5be3e4b0b8b08fa643aa3e4c6702ccc0f00d68fa8a8c9858a735a0032485a44990ed2810526c875e416f001b17df12b"
 }
