@@ -27,6 +27,7 @@ jobs:
         id: pnpm-cache
         shell: bash
         run: |
+          pnpm store path
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
       - name: Setup pnpm cache
