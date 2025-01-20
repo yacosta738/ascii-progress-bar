@@ -14,7 +14,8 @@
     "astro": "astro",
     "clean": "pnpm -r clean",
     "format": "pnpm biome format --write .",
-    "lint": "pnpm biome check"
+    "lint": "pnpm biome lint --write .",
+    "check": "pnpm biome check --write ."
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",

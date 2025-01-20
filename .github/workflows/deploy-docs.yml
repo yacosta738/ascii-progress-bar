@@ -31,7 +31,7 @@ jobs:
         run: pnpm install
 
       - name: Setup Biome
-        uses: biomejs/biome-action@v1
+        uses: biomejs/setup-biome@v2
 
       - name: Run Biome Check
         run: pnpm lint
