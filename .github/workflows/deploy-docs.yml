@@ -33,6 +33,7 @@ jobs:
       - name: Verify store path exists
         run: |
           if [ ! -d "${{ steps.pnpm-cache.outputs.STORE_PATH }}" ]; then
+            echo "🟢 Creating pnpm store directory"
             mkdir -p "${{ steps.pnpm-cache.outputs.STORE_PATH }}"
           fi
 
