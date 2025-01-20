@@ -27,7 +27,7 @@ jobs:
         id: pnpm-cache
         shell: bash
         run: |
-          pnpm store path
+          echo "🟢 pnpm store path: $(pnpm store path)"
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
       - name: Verify store path exists
