@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/yacosta738/ascii-progress-bar/compare/v1.2.0...v1.3.0) (2025-01-20)
+
+
+### Features
+
+* Add internationalization support with new i18n examples and update content configuration ([9cf4723](https://github.com/yacosta738/ascii-progress-bar/commit/9cf4723982828ede700d6226099dffcf1facdfc4))
+
 # [1.2.0](https://github.com/yacosta738/ascii-progress-bar/compare/v1.1.0...v1.2.0) (2025-01-20)
 
 
