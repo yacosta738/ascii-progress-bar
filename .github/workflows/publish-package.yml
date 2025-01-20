@@ -41,6 +41,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Run tests
+        working-directory: packages/ascii-progress-bar
+        run: pnpm test
+
       - name: Build package
         working-directory: packages/ascii-progress-bar
         run: pnpm build
