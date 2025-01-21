@@ -60,6 +60,7 @@ El componente soporta varios patrones incorporados:
 Puedes actualizar el progreso dinámicamente usando JavaScript:
 
 ```javascript
+import '@yacosta738/ascii-progress-bar/browser';
 // Get the element
 const progressBar = document.querySelector('ascii-progress-bar');
 
@@ -82,17 +83,22 @@ setInterval(() => {
 <ascii-progress-bar id="year-progress" pattern="default"></ascii-progress-bar>
 
 <script>
-function updateYearProgress() {
-  const now = new Date();
-  const start = new Date(now.getFullYear(), 0, 1);
-  const end = new Date(now.getFullYear() + 1, 0, 1);
-  const progress = ((now - start) / (end - start)) * 100;
-  document.getElementById('year-progress')
-    .setAttribute('progress', progress.toFixed(2));
-}
+import '@yacosta738/ascii-progress-bar/browser';
+	function updateYearProgress() {
+		const now = new Date();
+		const start = new Date(now.getFullYear(), 0, 1);
+		const end = new Date(now.getFullYear() + 1, 0, 1);
+		const progress = ((now.getTime() - start.getTime()) / (end.getTime() - start.getTime())) * 100;
+		console.log(progress);
+		const progressBar = document.getElementById('year-progress');
+		console.log(progressBar);
+		if (progressBar) {
+			progressBar.setAttribute('progress', progress.toFixed(2));
+		}
+	}
 
-updateYearProgress();
-setInterval(updateYearProgress, 60 * 60 * 1000); // Update hourly
+	updateYearProgress();
+	setInterval(updateYearProgress, 60 * 60 * 1000); // Update hourly
 </script>
 ```
 
@@ -102,6 +108,7 @@ setInterval(updateYearProgress, 60 * 60 * 1000); // Update hourly
 <ascii-progress-bar id="scroll-progress" pattern="blocks"></ascii-progress-bar>
 
 <script>
+import '@yacosta738/ascii-progress-bar/browser';
 function updateScrollProgress() {
   const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
   const progress = (window.scrollY / windowHeight) * 100;
@@ -120,6 +127,7 @@ updateScrollProgress();
 <ascii-progress-bar id="countdown" pattern="minimal"></ascii-progress-bar>
 
 <script>
+import '@yacosta738/ascii-progress-bar/browser';
 const totalTime = 60; // 60 seconds
 let remainingTime = totalTime;
 
