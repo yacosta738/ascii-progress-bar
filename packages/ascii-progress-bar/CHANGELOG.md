@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/yacosta738/ascii-progress-bar/compare/v1.4.0...v1.5.0) (2025-01-21)
+
+
+### Features
+
+* Add GitHub Actions workflow for cleaning up caches of closed branches ([1ffb992](https://github.com/yacosta738/ascii-progress-bar/commit/1ffb992deffb563891b35534da6b949f9e011cc6))
+
 # [1.4.0](https://github.com/yacosta738/ascii-progress-bar/compare/v1.3.0...v1.4.0) (2025-01-21)
 
 
