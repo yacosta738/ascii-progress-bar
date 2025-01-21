@@ -19,7 +19,7 @@ A continuación se muestran los patrones incorporados que puedes usar:
 | Dots     | .      | o      | 20       | Minimalista, ideal para loaders   |
 | Stars    | (espacio)| *    | 10       | Divertido e informal              |
 | Hashes   | (espacio)| #    | 10       | Común en herramientas de terminal |
-| Circles  | (espacio)| ◉    | 10       | Estilo moderno circular           |
+| Circles  | ○        | ◉    | 10       | Estilo moderno circular           |
 | Braille  | ⣀     | ⣿      | 8        | Compacto, impacto visual denso    |
 | Minimal  | ▱      | ▰      | 5        | Barra de progreso muy corta y limpia|
 | Blocks   | ▯      | ▮      | 10       | Estilo limpio basado en bloques   |

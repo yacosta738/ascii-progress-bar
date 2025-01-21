@@ -10,7 +10,7 @@ export class AsciiProgressRenderer {
         dots: { empty: '.', filled: 'o', length: 20 },
         stars: { empty: ' ', filled: '*', length: 10 },
         hashes: { empty: ' ', filled: '#', length: 10 },
-        circles: { empty: ' ', filled: '◉', length: 10 },
+        circles: { empty: '○', filled: '◉', length: 10 },
         braille: { empty: '⣀', filled: '⣿', length: 8 },
         minimal: { empty: '▱', filled: '▰', length: 5 },
         blocks: { empty: '▯', filled: '▮', length: 10 }

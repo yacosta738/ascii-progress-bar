@@ -18,7 +18,7 @@ Below are the built-in patterns you can use:
 | Dots     | .     | o      | 20     | Minimalistic, ideal for loaders.  |
 | Stars    | (space)| *     | 10     | Fun and informal.                 |
 | Hashes   | (space)| #     | 10     | Common in terminal tools.         |
-| Circles  | (space)| ◉     | 10     | Circular, modern style.           |
+| Circles  | ○      | ◉     | 10     | Circular, modern style.           |
 | Braille  | ⣀    | ⣿     | 8      | Compact, dense visual impact.     |
 | Minimal  | ▱     | ▰      | 5      | Very short, clean progress bar.   |
 | Blocks   | ▯     | ▮      | 10     | Clean block-based style.          |
