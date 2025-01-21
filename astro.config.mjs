@@ -12,12 +12,11 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "ASCII Progress Bar",
-       // Set English as the default language for this site.
-       defaultLocale: 'en',
+       defaultLocale: 'root',
        locales: {
-         // English docs in `src/content/docs/en/`
-         en: {
+         root: {
            label: 'English',
+           lang: 'en',
          },
          // Spanish docs in `src/content/docs/es/`
          es: {

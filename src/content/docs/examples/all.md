@@ -11,11 +11,11 @@ banner:
 
 Get started with simple progress bar implementations:
 
-- [Console Example](/ascii-progress-bar/en/examples/console) - A basic progress bar with default settings
-- [Web Example](/ascii-progress-bar/en/examples/web-component) - Display a progress bar in a web page
+- [Console Example](/ascii-progress-bar/examples/console) - A basic progress bar with default settings
+- [Web Example](/ascii-progress-bar/examples/web-component) - Display a progress bar in a web page
 
 ## Customization
 
 Learn how to customize the appearance:
 
-- [Custom Characters](/ascii-progress-bar/en/examples/chars) - Change the characters used in the progress bar
+- [Custom Characters](/ascii-progress-bar/examples/chars) - Change the characters used in the progress bar
