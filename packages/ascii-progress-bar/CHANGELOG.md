@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/yacosta738/ascii-progress-bar/compare/v1.3.0...v1.4.0) (2025-01-21)
+
+
+### Features
+
+* Update circle characters in progress bar renderer and documentation ([fb3e1cd](https://github.com/yacosta738/ascii-progress-bar/commit/fb3e1cdd28e6f5b245c0ebbdaa483aa595f11d55))
+
 # [1.3.0](https://github.com/yacosta738/ascii-progress-bar/compare/v1.2.0...v1.3.0) (2025-01-20)
 
 
