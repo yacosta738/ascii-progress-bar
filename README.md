@@ -127,63 +127,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 🔗 Using the `links.yml` Workflow
-
-The `links.yml` workflow is used to check for broken links in your project. It uses the `lychee-action` to perform the link checking.
-
-### Setting up the Workflow
-
-1. Create a `.github/workflows/links.yml` file in your repository.
-2. Add the following content to the file:
-
-```yaml
-name: Links
-
-on:
-  repository_dispatch:
-  workflow_dispatch:
-  schedule:
-    - cron: '00 18 * * *'
-
-jobs:
-  linkChecker:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Restore lychee cache
-        id: restore-cache
-        uses: actions/cache/restore@v4
-        with:
-          path: .lycheecache
-          key: cache-lychee-${{ github.sha }}
-          restore-keys: cache-lychee-
-
-      - name: Run lychee
-        id: run-lychee
-        uses: lycheeverse/lychee-action@v2.2.0
-        with:
-          args: "--base . --cache --max-cache-age 1d . --max-redirects 10 --max-retries 5 --user-agent Chrome/51.0.2704.103 Safari/537.36"
-
-      - name: Set lychee exit code
-        run: echo "lychee_exit_code=$?" >> $GITHUB_ENV
-
-      - name: Save lychee cache
-        uses: actions/cache/save@v4
-        if: always()
-        with:
-          path: .lycheecache
-          key: ${{ steps.restore-cache.outputs.cache-primary-key }}
-
-      - name: Create Issue From File
-        if: steps.run-lychee.outcome == 'failure'
-        uses: peter-evans/create-issue-from-file@v5
-        with:
-          title: Link Checker Report
-          content-filepath: ./lychee/out.md
-          labels: report, automated issue
-```
-
 ### Environment Variable
 
 The `lychee_exit_code` environment variable is used to capture the exit code of the `lychee` command. This is important for determining whether the link checking step was successful or not. The `Create Issue From File` step uses this variable to decide if an issue should be created based on the link check results.
