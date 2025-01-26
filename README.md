@@ -126,3 +126,27 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Pre-commit Hook
+
+Lychee can also be used as a pre-commit hook.
+
+### .pre-commit-config.yaml
+
+```yaml
+repos:
+  - repo: https://github.com/lycheeverse/lychee.git
+    rev: v0.15.1
+    hooks:
+      - id: lychee
+        # Optionally include additional CLI arguments
+        args: ["--no-progress", "--exclude", "file://"]
+```
+
+Rather than running on staged-files only, Lychee can be run against an entire repository.
+
+```yaml
+- id: lychee
+  args: ["--no-progress", "."]
+  pass_filenames: false
+```
