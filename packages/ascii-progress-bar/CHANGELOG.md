@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/yacosta738/ascii-progress-bar/compare/v1.5.1...v1.6.0) (2025-01-26)
+
+
+### Features
+
+* Add show-progress attribute to control visibility of progress percentage ([#13](https://github.com/yacosta738/ascii-progress-bar/issues/13)) ([952a413](https://github.com/yacosta738/ascii-progress-bar/commit/952a41353733e1c434336b5f1c386fc133623c56))
+
 ## [1.5.1](https://github.com/yacosta738/ascii-progress-bar/compare/v1.5.0...v1.5.1) (2025-01-26)
 
 
