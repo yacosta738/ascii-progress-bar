@@ -10,6 +10,7 @@ permissions:
   issues: write
   pull-requests: write
   packages: write
+  actions: write     # Added for creating releases
 
 env:
   PBOT_GITHUB_TOKEN: ${{ secrets.PBOT_GITHUB_TOKEN }}
@@ -47,9 +48,11 @@ jobs:
       - name: Semantic Release
         working-directory: packages/ascii-progress-bar
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Changed from PBOT_GITHUB_TOKEN
+          # Use GITHUB_TOKEN with write permissions
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          npx semantic-release
+          npx semantic-release --debug  # Added debug flag
