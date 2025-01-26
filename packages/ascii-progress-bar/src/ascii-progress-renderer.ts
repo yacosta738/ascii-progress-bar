@@ -1,50 +1,53 @@
-import type { Pattern, Patterns } from './types';
+import type { Pattern, Patterns } from "./types";
 
-export class AsciiProgressRenderer {
-  private static patternsMap = new Map<string, Pattern>();
-  
-  private static initializeDefaultPatterns() {
-    if (this.patternsMap.size === 0) {
-      const defaultPatterns: Patterns = {
-        default: { empty: '□', filled: '■', length: 10 },
-        dots: { empty: '.', filled: 'o', length: 20 },
-        stars: { empty: ' ', filled: '*', length: 10 },
-        hashes: { empty: ' ', filled: '#', length: 10 },
-        circles: { empty: '○', filled: '◉', length: 10 },
-        braille: { empty: '⣀', filled: '⣿', length: 8 },
-        minimal: { empty: '▱', filled: '▰', length: 5 },
-        blocks: { empty: '▯', filled: '▮', length: 10 }
-      };
+export const AsciiProgressRenderer = {
+	patternsMap: new Map<string, Pattern>(),
 
-      Object.entries(defaultPatterns).forEach(([name, pattern]) => {
-        this.patternsMap.set(name, pattern);
-      });
-    }
-  }
+	initializeDefaultPatterns() {
+		if (AsciiProgressRenderer.patternsMap.size === 0) {
+			const defaultPatterns: Patterns = {
+				default: { empty: "□", filled: "■", length: 10 },
+				dots: { empty: ".", filled: "o", length: 20 },
+				stars: { empty: " ", filled: "*", length: 10 },
+				hashes: { empty: " ", filled: "#", length: 10 },
+				circles: { empty: "○", filled: "◉", length: 10 },
+				braille: { empty: "⣀", filled: "⣿", length: 8 },
+				minimal: { empty: "▱", filled: "▰", length: 5 },
+				blocks: { empty: "▯", filled: "▮", length: 10 },
+			};
 
-  static addPattern(name: string, pattern: Pattern): void {
-    this.initializeDefaultPatterns();
-    if (pattern.empty && pattern.filled && pattern.length) {
-      this.patternsMap.set(name, pattern);
-    }
-  }
+			for (const [name, pattern] of Object.entries(defaultPatterns)) {
+				AsciiProgressRenderer.patternsMap.set(name, pattern);
+			}
+		}
+	},
 
-  static render(progress: number, patternName: string = 'default'): string {
-    this.initializeDefaultPatterns();
-    const pattern = this.patternsMap.get(patternName) || this.patternsMap.get('default');
-    if (!pattern) {
-      console.warn(`Pattern ${patternName} not found, using default`);
-      return this.render(progress, 'default');
-    }
-    
-    const { empty, filled, length } = pattern;
-    const filledCount = Math.round((progress / 100) * length);
-    const emptyCount = length - filledCount;
-    return `${filled.repeat(filledCount)}${empty.repeat(emptyCount)} ${progress}%`;
-  }
+	addPattern(name: string, pattern: Pattern): void {
+		AsciiProgressRenderer.initializeDefaultPatterns();
+		if (pattern.empty && pattern.filled && pattern.length) {
+			AsciiProgressRenderer.patternsMap.set(name, pattern);
+		}
+	},
 
-  static getPattern(name: string): Pattern | undefined {
-    this.initializeDefaultPatterns();
-    return this.patternsMap.get(name);
-  }
-}
+	render(progress: number, patternName = "default"): string {
+		AsciiProgressRenderer.initializeDefaultPatterns();
+		const pattern =
+			AsciiProgressRenderer.patternsMap.get(patternName) ||
+			AsciiProgressRenderer.patternsMap.get("default");
+
+		if (!pattern) {
+			console.warn(`Pattern ${patternName} not found, using default`);
+			return AsciiProgressRenderer.render(progress, "default");
+		}
+
+		const { empty, filled, length } = pattern;
+		const filledCount = Math.round((progress / 100) * length);
+		const emptyCount = length - filledCount;
+		return `${filled.repeat(filledCount)}${empty.repeat(emptyCount)} ${progress}%`;
+	},
+
+	getPattern(name: string): Pattern | undefined {
+		AsciiProgressRenderer.initializeDefaultPatterns();
+		return AsciiProgressRenderer.patternsMap.get(name);
+	},
+};

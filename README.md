@@ -23,7 +23,8 @@ pnpm add @yacosta738/ascii-progress-bar
 
 ## 📚 Documentation
 
-Visit our [documentation site](https://yacosta738.github.io/ascii-progress-bar) for detailed usage instructions and examples.
+Visit our [documentation site](https://yacosta738.github.io/ascii-progress-bar) for detailed usage
+instructions and examples.
 
 ## 🎯 Features
 
@@ -126,3 +127,19 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Pre-commit Hook
+
+To use Lychee as a pre-commit hook, first install pre-commit:
+
+```bash
+  pip install pre-commit
+```
+
+Then install the pre-commit hooks:
+
+```bash
+  pre-commit install
+```
+
+Lychee can also be used as a pre-commit hook.

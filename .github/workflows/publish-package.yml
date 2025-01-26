@@ -23,8 +23,8 @@ jobs:
       - name: Setup Biome
         uses: biomejs/setup-biome@v2
 
-      - name: Run Biome Check
-        run: pnpm lint
+      - name: Run Check
+        run: pnpm run check
 
       - name: Run tests
         working-directory: packages/ascii-progress-bar
