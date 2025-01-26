@@ -1,2 +1,2 @@
-export * from './ascii-progress-renderer';
-export * from './types';
+export * from "./ascii-progress-renderer";
+export * from "./types";

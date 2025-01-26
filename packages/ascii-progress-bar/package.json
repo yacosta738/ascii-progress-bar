@@ -1,68 +1,65 @@
 {
-  "name": "@yacosta738/ascii-progress-bar",
-  "description": "A simple ASCII progress bar for the terminal",
-  "version": "1.5.1",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    },
-    "./browser": {
-      "types": "./dist/browser.d.ts",
-      "import": "./dist/browser.mjs",
-      "require": "./dist/browser.js"
-    }
-  },
-  "scripts": {
-    "build": "tsup",
-    "clean": "rm -rf dist",
-    "test": "vitest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yacosta738/ascii-progress-bar.git"
-  },
-  "keywords": [
-    "web",
-    "component",
-    "components",
-    "web components",
-    "custom elements",
-    "progress",
-    "progress bar",
-    "ascii",
-    "ascii art"
-  ],
-  "bugs": {
-    "url": "https://github.com/yacosta738/ascii-progress-bar/issues"
-  },
-  "author": {
-    "name": "Yuniel Acosta",
-    "email": "stray-hefts.3o@icloud.com",
-    "url": "https://yunielacosta.com/"
-  },
-  "homepage": "https://github.com/yacosta738/ascii-progress-bar#readme",
-  "devDependencies": {
-    "tsup": "^8.3.5",
-    "jsdom": "^26.0.0",
-    "vitest": "^3.0.2",
-    "semantic-release": "^23.0.2",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^9.2.6",
-    "@semantic-release/npm": "^11.0.2",
-    "@semantic-release/release-notes-generator": "^12.1.0"
-  },
-  "files": [
-    "dist",
-    "README.md"
-  ],
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  }
+	"name": "@yacosta738/ascii-progress-bar",
+	"description": "A simple ASCII progress bar for the terminal",
+	"version": "1.5.1",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
+		},
+		"./browser": {
+			"types": "./dist/browser.d.ts",
+			"import": "./dist/browser.mjs",
+			"require": "./dist/browser.js"
+		}
+	},
+	"scripts": {
+		"build": "tsup",
+		"clean": "rm -rf dist",
+		"test": "vitest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yacosta738/ascii-progress-bar.git"
+	},
+	"keywords": [
+		"web",
+		"component",
+		"components",
+		"web components",
+		"custom elements",
+		"progress",
+		"progress bar",
+		"ascii",
+		"ascii art"
+	],
+	"bugs": {
+		"url": "https://github.com/yacosta738/ascii-progress-bar/issues"
+	},
+	"author": {
+		"name": "Yuniel Acosta",
+		"email": "stray-hefts.3o@icloud.com",
+		"url": "https://yunielacosta.com/"
+	},
+	"homepage": "https://github.com/yacosta738/ascii-progress-bar#readme",
+	"devDependencies": {
+		"tsup": "^8.3.5",
+		"jsdom": "^26.0.0",
+		"vitest": "^3.0.2",
+		"semantic-release": "^23.0.2",
+		"@semantic-release/changelog": "^6.0.3",
+		"@semantic-release/git": "^10.0.1",
+		"@semantic-release/github": "^9.2.6",
+		"@semantic-release/npm": "^11.0.2",
+		"@semantic-release/release-notes-generator": "^12.1.0"
+	},
+	"files": ["dist", "README.md"],
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	}
 }

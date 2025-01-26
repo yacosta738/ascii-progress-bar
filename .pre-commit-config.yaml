@@ -5,14 +5,3 @@ repos:
       - id: lychee
         # Optionally include additional CLI arguments
         args: ["--no-progress", "--exclude", "file://"]
-
-repos:
-  - repo: https://github.com/lycheeverse/lychee.git
-    rev: v0.15.1
-    hooks:
-      - id: lychee
-        # Optionally include additional CLI arguments
-        args: ["--no-progress", "--exclude", "file://"]
-      - id: lychee
-        args: ["--no-progress", "."]
-        pass_filenames: false

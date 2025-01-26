@@ -23,7 +23,8 @@ pnpm add @yacosta738/ascii-progress-bar
 
 ## 📚 Documentation
 
-Visit our [documentation site](https://yacosta738.github.io/ascii-progress-bar) for detailed usage instructions and examples.
+Visit our [documentation site](https://yacosta738.github.io/ascii-progress-bar) for detailed usage
+instructions and examples.
 
 ## 🎯 Features
 
@@ -129,24 +130,16 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Pre-commit Hook
 
+To use Lychee as a pre-commit hook, first install pre-commit:
+
+```bash
+  pip install pre-commit
+```
+
+Then install the pre-commit hooks:
+
+```bash
+  pre-commit install
+```
+
 Lychee can also be used as a pre-commit hook.
-
-### .pre-commit-config.yaml
-
-```yaml
-repos:
-  - repo: https://github.com/lycheeverse/lychee.git
-    rev: v0.15.1
-    hooks:
-      - id: lychee
-        # Optionally include additional CLI arguments
-        args: ["--no-progress", "--exclude", "file://"]
-```
-
-Rather than running on staged-files only, Lychee can be run against an entire repository.
-
-```yaml
-- id: lychee
-  args: ["--no-progress", "."]
-  pass_filenames: false
-```
