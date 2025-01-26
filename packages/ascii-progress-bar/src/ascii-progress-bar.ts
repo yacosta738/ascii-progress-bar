@@ -46,7 +46,7 @@ export class AsciiProgressBar extends HTMLElement {
 			} else if (name === "pattern") {
 				this.pattern = newValue;
 			} else if (name === "show-progress") {
-				this.showProgress = newValue !== null;
+				this.showProgress = newValue !== "false";
 			}
 			this.render();
 		}
