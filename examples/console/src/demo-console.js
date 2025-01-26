@@ -11,6 +11,7 @@ console.log("Stars:    ", AsciiProgressRenderer.render(40, "stars"));
 console.log("Braille:  ", AsciiProgressRenderer.render(80, "braille"));
 console.log("Minimal:  ", AsciiProgressRenderer.render(50, "minimal"));
 console.log("Blocks:   ", AsciiProgressRenderer.render(65, "blocks"));
+console.log("Blocks without percentage:   ", AsciiProgressRenderer.render(65, "blocks", false));
 
 // Animated demo
 async function animateProgress() {
