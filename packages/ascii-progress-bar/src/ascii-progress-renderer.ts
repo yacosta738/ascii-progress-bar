@@ -29,7 +29,7 @@ export const AsciiProgressRenderer = {
 		}
 	},
 
-	render(progress: number, patternName = "default"): string {
+	render(progress: number, patternName = "default", showProgress = true): string {
 		AsciiProgressRenderer.initializeDefaultPatterns();
 		const pattern =
 			AsciiProgressRenderer.patternsMap.get(patternName) ||
@@ -37,13 +37,14 @@ export const AsciiProgressRenderer = {
 
 		if (!pattern) {
 			console.warn(`Pattern ${patternName} not found, using default`);
-			return AsciiProgressRenderer.render(progress, "default");
+			return AsciiProgressRenderer.render(progress, "default", showProgress);
 		}
 
 		const { empty, filled, length } = pattern;
 		const filledCount = Math.round((progress / 100) * length);
 		const emptyCount = length - filledCount;
-		return `${filled.repeat(filledCount)}${empty.repeat(emptyCount)} ${progress}%`;
+		const progressText = showProgress ? ` ${progress}%` : "";
+		return `${filled.repeat(filledCount)}${empty.repeat(emptyCount)}${progressText}`;
 	},
 
 	getPattern(name: string): Pattern | undefined {

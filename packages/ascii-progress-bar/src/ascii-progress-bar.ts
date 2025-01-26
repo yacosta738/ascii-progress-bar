@@ -4,6 +4,7 @@ import type { Pattern } from "./types";
 export class AsciiProgressBar extends HTMLElement {
 	private progress: number;
 	private pattern: string;
+	private showProgress: boolean;
 
 	static register(tagName?: string): void {
 		if (
@@ -23,6 +24,7 @@ export class AsciiProgressBar extends HTMLElement {
 		this.attachShadow({ mode: "open" });
 		this.progress = Number.parseFloat(this.getAttribute("progress") || "0");
 		this.pattern = this.getAttribute("pattern") || "default";
+		this.showProgress = this.getAttribute("show-progress") !== "false";
 	}
 
 	connectedCallback(): void {
@@ -30,7 +32,7 @@ export class AsciiProgressBar extends HTMLElement {
 	}
 
 	static get observedAttributes(): string[] {
-		return ["progress", "pattern"];
+		return ["progress", "pattern", "show-progress"];
 	}
 
 	attributeChangedCallback(
@@ -43,14 +45,17 @@ export class AsciiProgressBar extends HTMLElement {
 				this.progress = Number.parseFloat(newValue);
 			} else if (name === "pattern") {
 				this.pattern = newValue;
+			} else if (name === "show-progress") {
+				this.showProgress = newValue === "true";
 			}
 			this.render();
 		}
 	}
 
 	public render(): void {
-		const bar = AsciiProgressRenderer.render(this.progress, this.pattern);
+		const bar = AsciiProgressRenderer.render(this.progress, this.pattern, this.showProgress);
 		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML = ''; // Clear existing content
 			const pre = document.createElement('pre');
 			pre.textContent = bar;
 			this.shadowRoot.appendChild(pre);

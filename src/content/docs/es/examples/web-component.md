@@ -175,6 +175,18 @@ AsciiProgressBar.addPattern('custom', {
 <ascii-progress-bar progress="70" pattern="custom"></ascii-progress-bar>
 ```
 
+## Mostrar u Ocultar el Porcentaje de Progreso
+
+Puedes controlar la visibilidad del porcentaje de progreso usando el atributo `show-progress`:
+
+```html
+<!-- Mostrar porcentaje de progreso (predeterminado) -->
+<ascii-progress-bar progress="75" pattern="default" show-progress="true"></ascii-progress-bar>
+
+<!-- Ocultar porcentaje de progreso -->
+<ascii-progress-bar progress="75" pattern="default" show-progress="false"></ascii-progress-bar>
+```
+
 ## Soporte de Navegadores
 
 El componente web funciona en todos los navegadores modernos que soportan Custom Elements v1. Para navegadores antiguos, considera usar un polyfill.

@@ -70,4 +70,33 @@ describe("AsciiProgressBar", () => {
 		// Attempting to register again should not throw
 		expect(() => AsciiProgressBar.register()).not.toThrow();
 	});
+
+	it("should show progress percentage by default", () => {
+		const element = document.createElement("ascii-progress-bar");
+		element.setAttribute("progress", "50");
+		document.body.appendChild(element);
+
+		const shadow = element.shadowRoot;
+		const pre = shadow?.querySelector("pre");
+		expect(pre?.textContent).toBe("■■■■■□□□□□ 50%");
+	});
+
+	it.each([
+		["", true],
+		["true", true],
+		["false", false]
+	])("should handle show-progress value %s correctly", (value, shouldShow) => {
+		const element = document.createElement("ascii-progress-bar");
+		element.setAttribute("progress", "50");
+		if (value !== "") {
+			element.setAttribute("show-progress", value);
+		}
+		document.body.appendChild(element);
+
+		const shadow = element.shadowRoot;
+		const pre = shadow?.querySelector("pre");
+		const actual = pre?.textContent;
+		const expected = shouldShow ? "■■■■■□□□□□ 50%" : "■■■■■□□□□□";
+		expect(pre?.textContent).toBe(shouldShow ? "■■■■■□□□□□ 50%" : "■■■■■□□□□□");
+	});
 });

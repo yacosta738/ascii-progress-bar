@@ -64,10 +64,11 @@ AsciiProgressBar.addPattern('custom', {
 
 ### Attributes
 
-| Attribute  | Type     | Default    | Description                    |
-|------------|----------|------------|--------------------------------|
-| progress   | number   | 0          | Progress value (0-100)        |
-| pattern    | string   | 'default'  | Name of the pattern to use    |
+| Attribute     | Type     | Default    | Description                    |
+|---------------|----------|------------|--------------------------------|
+| progress      | number   | 0          | Progress value (0-100)         |
+| pattern       | string   | 'default'  | Name of the pattern to use     |
+| show-progress | boolean  | true       | Show or hide the progress (%)  |
 
 ## TypeScript Support
 
