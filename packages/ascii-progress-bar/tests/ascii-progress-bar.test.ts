@@ -71,6 +71,16 @@ describe("AsciiProgressBar", () => {
 		expect(() => AsciiProgressBar.register()).not.toThrow();
 	});
 
+	it("should show progress percentage by default", () => {
+		const element = document.createElement("ascii-progress-bar");
+		element.setAttribute("progress", "50");
+		document.body.appendChild(element);
+
+		const shadow = element.shadowRoot;
+		const pre = shadow?.querySelector("pre");
+		expect(pre?.textContent).toBe("■■■■■□□□□□ 50%");
+	});
+
 	it("should hide progress percentage when show-progress is false", () => {
 		const element = document.createElement("ascii-progress-bar");
 		element.setAttribute("progress", "50");
