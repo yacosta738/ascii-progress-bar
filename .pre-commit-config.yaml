@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/lycheeverse/lychee.git
-    rev: v0.15.1
+    rev: v0.18.0
     hooks:
       - id: lychee
         # Optionally include additional CLI arguments
