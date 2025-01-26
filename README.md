@@ -126,7 +126,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-
-### Environment Variable
-
-The `lychee_exit_code` environment variable is used to capture the exit code of the `lychee` command. This is important for determining whether the link checking step was successful or not. The `Create Issue From File` step uses this variable to decide if an issue should be created based on the link check results.
