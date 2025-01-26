@@ -1,45 +1,37 @@
 name: Links
 
-on:
-  repository_dispatch:
-  workflow_dispatch:
-  schedule:
-    - cron: '00 18 * * *'
+on: [push, pull_request]
 
 jobs:
-  linkChecker:
+  check-links:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Restore lychee cache
-        id: restore-cache
-        uses: actions/cache/restore@v4
+      - name: Cache lychee
+        id: cache-lychee
+        uses: actions/cache@v2
         with:
           path: .lycheecache
-          key: cache-lychee-${{ github.sha }}
-          restore-keys: cache-lychee-
+          key: cache-lychee-${{ hashFiles('**/*') }}
+          restore-keys: |
+            cache-lychee-
 
-      - name: Run lychee
-        id: run-lychee
+      - name: Run lychee link checker
         uses: lycheeverse/lychee-action@v2.2.0
         with:
-          args: "--base . --cache --max-cache-age 1d . --max-redirects 10 --max-retries 5 --user-agent Chrome/51.0.2704.103 Safari/537.36"
+          args: --base . --cache --max-cache-age 1d . --max-redirects 10 --max-retries 5 --user-agent Chrome/51.0.2704.103 Safari/537.36
+          format: markdown
+          jobSummary: true
+          output: lychee/out.md
+          fail: true
+          failIfEmpty: true
+          debug: false
 
-      - name: Set lychee exit code
-        run: echo "lychee_exit_code=$?" >> $GITHUB_ENV
-
-      - name: Save lychee cache
-        uses: actions/cache/save@v4
+      - name: Upload lychee output
         if: always()
+        uses: actions/upload-artifact@v2
         with:
-          path: .lycheecache
-          key: ${{ steps.restore-cache.outputs.cache-primary-key }}
-
-      - name: Create Issue From File
-        if: steps.run-lychee.outcome == 'failure'
-        uses: peter-evans/create-issue-from-file@v5
-        with:
-          title: Link Checker Report
-          content-filepath: ./lychee/out.md
-          labels: report, automated issue
+          name: lychee-output
+          path: lychee/out.md
