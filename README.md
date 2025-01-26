@@ -1,5 +1,7 @@
 # ASCII Progress Bar
 
+![ASCII Progress Bar Cover](./public/ascii-bar-logo.png)
+
 A lightweight and customizable ASCII progress bar web component for modern web applications.
 
 [![Deploy Docs to GitHub Pages](https://github.com/yacosta738/ascii-progress-bar/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/yacosta738/ascii-progress-bar/actions/workflows/deploy-docs.yml)
