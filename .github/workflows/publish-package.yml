@@ -47,5 +47,9 @@ jobs:
         working-directory: packages/ascii-progress-bar
         env:
           GITHUB_TOKEN: ${{ env.PBOT_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PBOT_GITHUB_TOKEN }}  # Added for PR creation
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          npx semantic-release
