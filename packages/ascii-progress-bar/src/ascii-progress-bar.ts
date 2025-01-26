@@ -24,7 +24,7 @@ export class AsciiProgressBar extends HTMLElement {
 		this.attachShadow({ mode: "open" });
 		this.progress = Number.parseFloat(this.getAttribute("progress") || "0");
 		this.pattern = this.getAttribute("pattern") || "default";
-		this.showProgress = this.hasAttribute("show-progress");
+		this.showProgress = this.getAttribute("show-progress") !== "false";
 	}
 
 	connectedCallback(): void {
