@@ -1,4 +1,4 @@
-import { expect, it, beforeEach, describe } from "vitest";
+import { beforeEach, describe, expect, it } from "vitest";
 import { AsciiProgressRenderer } from "../src/ascii-progress-renderer";
 import type { Pattern } from "../src/types";
 

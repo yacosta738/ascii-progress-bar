@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { AsciiProgressBar } from "../src/ascii-progress-bar";
 import type { Pattern } from "../src/types";
 
