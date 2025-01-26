@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/yacosta738/ascii-progress-bar/compare/v1.5.0...v1.5.1) (2025-01-26)
+
+
+### Bug Fixes
+
+* Update README.md ([bc87443](https://github.com/yacosta738/ascii-progress-bar/commit/bc874434316f06139c6c3a84583087ae02b16245))
+
 # [1.5.0](https://github.com/yacosta738/ascii-progress-bar/compare/v1.4.0...v1.5.0) (2025-01-21)
 
 
