@@ -173,7 +173,7 @@ jobs:
         if: always()
         with:
           path: .lycheecache
-          key: ${{ steps.restore-cache.outputs.cache-key }}
+          key: ${{ steps.restore-cache.outputs.cache-primary-key }}
 
       - name: Create Issue From File
         if: steps.run-lychee.outcome == 'failure'
