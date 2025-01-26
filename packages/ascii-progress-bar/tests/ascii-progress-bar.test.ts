@@ -92,6 +92,24 @@ describe("AsciiProgressBar", () => {
 		expect(pre?.textContent).toBe("■■■■■□□□□□");
 	});
 
+	it.each([
+		["", true],
+		["true", true],
+		["false", false],
+		["invalid", true]
+	])("should handle show-progress value %s correctly", (value, shouldShow) => {
+		const element = document.createElement("ascii-progress-bar");
+		element.setAttribute("progress", "50");
+		if (value !== "") {
+			element.setAttribute("show-progress", value);
+		}
+		document.body.appendChild(element);
+
+		const shadow = element.shadowRoot;
+		const pre = shadow?.querySelector("pre");
+		expect(pre?.textContent).toBe(shouldShow ? "■■■■■□□□□□ 50%" : "■■■■■□□□□□");
+	});
+
 	it("should show progress percentage when show-progress is true", () => {
 		const element = document.createElement("ascii-progress-bar");
 		element.setAttribute("progress", "50");
