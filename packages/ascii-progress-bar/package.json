@@ -55,7 +55,8 @@
 		"@semantic-release/git": "^10.0.1",
 		"@semantic-release/github": "^9.2.6",
 		"@semantic-release/npm": "^11.0.2",
-		"@semantic-release/release-notes-generator": "^12.1.0"
+		"@semantic-release/release-notes-generator": "^12.1.0",
+		"@semantic-release/exec": "^6.0.3"
 	},
 	"files": ["dist", "README.md"],
 	"license": "MIT",
