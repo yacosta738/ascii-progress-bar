@@ -144,4 +144,4 @@ Then install the pre-commit hooks:
   pre-commit install
 ```
 
-Lychee can also be used as a pre-commit hook.
+![Alt](https://repobeats.axiom.co/api/embed/6f6c01b8054cf5a88819f5ccb92e144b7fb8d4e5.svg "Repobeats analytics image")
