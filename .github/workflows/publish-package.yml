@@ -46,6 +46,6 @@ jobs:
       - name: Semantic Release
         working-directory: packages/ascii-progress-bar
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ env.PBOT_GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
