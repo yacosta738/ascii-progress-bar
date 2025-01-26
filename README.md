@@ -23,7 +23,7 @@ pnpm add @yacosta738/ascii-progress-bar
 
 ## 📚 Documentation
 
-Visit our [documentation site](https://ascii-progress-bar.vercel.app) for detailed usage instructions and examples.
+Visit our [documentation site](https://yacosta738.github.io/ascii-progress-bar) for detailed usage instructions and examples.
 
 ## 🎯 Features
 
