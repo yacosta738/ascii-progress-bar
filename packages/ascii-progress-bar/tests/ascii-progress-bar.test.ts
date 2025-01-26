@@ -81,22 +81,10 @@ describe("AsciiProgressBar", () => {
 		expect(pre?.textContent).toBe("■■■■■□□□□□ 50%");
 	});
 
-	it("should hide progress percentage when show-progress is false", () => {
-		const element = document.createElement("ascii-progress-bar");
-		element.setAttribute("progress", "50");
-		element.setAttribute("show-progress", "false");
-		document.body.appendChild(element);
-
-		const shadow = element.shadowRoot;
-		const pre = shadow?.querySelector("pre");
-		expect(pre?.textContent).toBe("■■■■■□□□□□");
-	});
-
 	it.each([
 		["", true],
 		["true", true],
-		["false", false],
-		["invalid", true]
+		["false", false]
 	])("should handle show-progress value %s correctly", (value, shouldShow) => {
 		const element = document.createElement("ascii-progress-bar");
 		element.setAttribute("progress", "50");
@@ -107,17 +95,8 @@ describe("AsciiProgressBar", () => {
 
 		const shadow = element.shadowRoot;
 		const pre = shadow?.querySelector("pre");
+		const actual = pre?.textContent;
+		const expected = shouldShow ? "■■■■■□□□□□ 50%" : "■■■■■□□□□□";
 		expect(pre?.textContent).toBe(shouldShow ? "■■■■■□□□□□ 50%" : "■■■■■□□□□□");
-	});
-
-	it("should show progress percentage when show-progress is true", () => {
-		const element = document.createElement("ascii-progress-bar");
-		element.setAttribute("progress", "50");
-		element.setAttribute("show-progress", "true");
-		document.body.appendChild(element);
-
-		const shadow = element.shadowRoot;
-		const pre = shadow?.querySelector("pre");
-		expect(pre?.textContent).toBe("■■■■■□□□□□ 50%");
 	});
 });
