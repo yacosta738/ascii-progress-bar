@@ -26,8 +26,18 @@ runs:
       run: |
         echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
+    - name: Check if STORE_PATH exists
+      shell: bash
+      run: |
+        if [ -d "${{ env.STORE_PATH }}" ]; then
+          echo "STORE_PATH exists."
+        else
+          echo "STORE_PATH does not exist." && exit 1
+        fi
+
     - uses: actions/cache@v4
       name: Setup pnpm cache
+      if: success()
       with:
         path: ${{ env.STORE_PATH }}
         key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
