@@ -1,3 +1,14 @@
+# [1.7.0](https://github.com/yacosta738/ascii-progress-bar/compare/v1.6.0...v1.7.0) (2025-01-27)
+
+
+### Features
+
+* Add '@semantic-release/exec' package to pnpm-lock.yaml ([840bc13](https://github.com/yacosta738/ascii-progress-bar/commit/840bc13b513079d563be0458c368a6f0e5921ae5))
+* Add check for STORE_PATH existence in GitHub Actions ([a156d29](https://github.com/yacosta738/ascii-progress-bar/commit/a156d2965351b149de7ba8e636802579aefc8ecf))
+* Update GitHub Actions to install specific Node.js version and improve caching ([2460cfe](https://github.com/yacosta738/ascii-progress-bar/commit/2460cfe8237b1a16b02a45b5115592fab08e27d6))
+* Update GitHub Actions workflow for automatic release with token generation ([418ecf1](https://github.com/yacosta738/ascii-progress-bar/commit/418ecf109390a68fbf119d7ed826564fe9f8a45d))
+* Update GitHub Actions workflow to include fetch-depth and token for checkout step ([1140ada](https://github.com/yacosta738/ascii-progress-bar/commit/1140ada5202671ae65982187c55c454c09fb778d))
+
 # [1.6.0](https://github.com/yacosta738/ascii-progress-bar/compare/v1.5.1...v1.6.0) (2025-01-26)
 
 
