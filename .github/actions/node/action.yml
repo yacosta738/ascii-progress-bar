@@ -1,11 +1,6 @@
 name: Install Tools & Dependencies
 description: Installs pnpm, Node.js & package dependencies
 
-inputs:
-  tiptap-pro-token:
-    description: 'The token to access the Tiptap Pro registry'
-    required: true
-
 runs:
   using: composite
   steps:
@@ -17,40 +12,37 @@ runs:
     - name: Setup Node
       uses: actions/setup-node@v4
       with:
-        node-version: 'lts/*'
+        node-version: '22.13.1'
         cache: pnpm
         registry-url: 'https://registry.npmjs.org'
-    
+
     - name: Get pnpm store directory
       shell: bash
       run: |
         echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-    - name: Check if STORE_PATH exists
-      shell: bash
-      run: |
-        if [ -d "${{ env.STORE_PATH }}" ]; then
-          echo "STORE_PATH exists."
-        else
-          echo "STORE_PATH does not exist." && exit 1
-        fi
-
     - uses: actions/cache@v4
-      name: Setup pnpm cache
-      if: success()
+      name: Cache pnpm store
       with:
         path: ${{ env.STORE_PATH }}
-        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
         restore-keys: |
           ${{ runner.os }}-pnpm-store-
 
-    - name: 'Setup: check tools'
+    - uses: actions/cache@v4
+      name: Cache node_modules
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-modules-${{ hashFiles('pnpm-lock.yaml') }}
+
+    - name: 'Verify Tools Installation'
       shell: bash
       run: |
+        command -v node || exit 1
+        command -v pnpm || exit 1
         node -v
         pnpm -v
-        npm -v
 
     - name: Install dependencies
-      run: pnpm install --no-frozen-lockfile
       shell: bash
+      run: pnpm install
