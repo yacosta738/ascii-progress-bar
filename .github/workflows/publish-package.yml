@@ -1,4 +1,6 @@
-name: Publish Package
+# Info on the action
+name: Automatic Release
+run-name: ${{ github.actor }} is automatically releasing 🚀
 
 on:
   push:
@@ -12,24 +14,22 @@ permissions:
   packages: write
   actions: write     # Added for creating releases
 
-env:
-  PBOT_GITHUB_TOKEN: ${{ secrets.PBOT_GITHUB_TOKEN }}
-
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: 🔍 PBOT_GITHUB_TOKEN
-        if: env.PBOT_GITHUB_TOKEN == ''
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: echo "PBOT_GITHUB_TOKEN=${GITHUB_TOKEN}" >> $GITHUB_ENV
+      - name: 'Generate token'
+        id: generate_token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.VERSIONARY_BOT_ID }}
+          private_key: ${{ secrets.VERSIONARY_BOT_KEY }}
 
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ steps.generate_token.outputs.token }}
 
 
       - name: Install Tools & Dependencies
@@ -53,10 +53,6 @@ jobs:
         working-directory: packages/ascii-progress-bar
         env:
           # Use GITHUB_TOKEN with write permissions
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          npx semantic-release --debug  # Added debug flag
+        run: npx semantic-release
