@@ -47,10 +47,10 @@
 	},
 	"homepage": "https://github.com/yacosta738/ascii-progress-bar#readme",
 	"devDependencies": {
-		"tsup": "^8.3.6",
+		"tsup": "^8.4.0",
 		"jsdom": "^26.0.0",
-		"vitest": "^3.0.5",
-		"semantic-release": "^24.2.2",
+		"vitest": "^3.0.7",
+		"semantic-release": "^24.2.3",
 		"@semantic-release/changelog": "^6.0.3",
 		"@semantic-release/git": "^10.0.1",
 		"@semantic-release/github": "^11.0.1",
