@@ -31,7 +31,7 @@ jobs:
         run: pnpm test
         
       - name: Install, build, and upload your site
-        uses: withastro/action@v3
+        uses: withastro/action@v4
 
   deploy:
     needs: build
