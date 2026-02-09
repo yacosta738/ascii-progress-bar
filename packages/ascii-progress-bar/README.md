@@ -69,6 +69,7 @@ AsciiProgressBar.addPattern('custom', {
 | progress      | number   | 0          | Progress value (0-100)         |
 | pattern       | string   | 'default'  | Name of the pattern to use     |
 | show-progress | boolean  | true       | Show or hide the progress (%)  |
+| length        | number   | (pattern)  | Override the pattern's default length  |
 
 ## TypeScript Support
 
@@ -77,3 +78,11 @@ The package includes TypeScript definitions out of the box.
 ## License
 
 MIT License
+
+## Accessibility
+
+The component is built with accessibility in mind, automatically providing ARIA attributes:
+- `role="progressbar"`
+- `aria-valuemin="0"`
+- `aria-valuemax="100"`
+- `aria-valuenow` (synchronized with the progress value)

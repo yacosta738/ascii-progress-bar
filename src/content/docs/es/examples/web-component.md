@@ -175,6 +175,29 @@ AsciiProgressBar.addPattern('custom', {
 <ascii-progress-bar progress="70" pattern="custom"></ascii-progress-bar>
 ```
 
+## Longitud Personalizada
+
+Puedes anular la longitud predeterminada de cualquier patrón utilizando el atributo `length`:
+
+```html
+<ascii-progress-bar progress="50" pattern="default" length="20"></ascii-progress-bar>
+```
+
+## Accesibilidad
+
+El componente está diseñado pensando en la accesibilidad. Incluye automáticamente los siguientes atributos ARIA:
+
+- `role="progressbar" `
+- `aria-valuemin="0" `
+- `aria-valuemax="100" `
+- `aria-valuenow` (actualizado automáticamente)
+
+También puedes proporcionar una etiqueta más descriptiva usando `aria-label`:
+
+```html
+<ascii-progress-bar progress="75" aria-label="Subiendo archivo..."></ascii-progress-bar>
+```
+
 ## Mostrar u Ocultar el Porcentaje de Progreso
 
 Puedes controlar la visibilidad del porcentaje de progreso usando el atributo `show-progress`:

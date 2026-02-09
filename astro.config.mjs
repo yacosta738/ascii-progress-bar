@@ -21,11 +21,16 @@ export default defineConfig({
 				// Spanish docs in `src/content/docs/es/`
 				es: {
 					label: "Español",
+					lang: "es",
 				},
 			},
-			social: {
-				github: "https://github.com/yacosta738/ascii-progress-bar",
-			},
+			social: [
+				{
+					icon: "github",
+					label: "GitHub",
+					href: "https://github.com/yacosta738/ascii-progress-bar",
+				},
+			],
 			sidebar: [
 				{
 					label: "Guides",
