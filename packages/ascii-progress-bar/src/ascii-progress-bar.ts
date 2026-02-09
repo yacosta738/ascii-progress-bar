@@ -26,7 +26,10 @@ export class AsciiProgressBar extends HTMLElement {
 		this.attachShadow({ mode: "open" });
 		this.progress = this.parseProgress(this.getAttribute("progress"));
 		this.pattern = this.getAttribute("pattern") || "default";
-		this.showProgress = this.parseBoolean(this.getAttribute("show-progress"), true);
+		this.showProgress = this.parseBoolean(
+			this.getAttribute("show-progress"),
+			true,
+		);
 		const lengthAttr = this.getAttribute("length");
 		this.length = lengthAttr ? Number.parseInt(lengthAttr, 10) : undefined;
 	}
@@ -49,8 +52,8 @@ export class AsciiProgressBar extends HTMLElement {
 	}
 
 	private setupStyles(): void {
-		if (this.shadowRoot && !this.shadowRoot.querySelector('style')) {
-			const style = document.createElement('style');
+		if (this.shadowRoot && !this.shadowRoot.querySelector("style")) {
+			const style = document.createElement("style");
 			style.textContent = `
 				:host {
 					display: block;
@@ -67,14 +70,14 @@ export class AsciiProgressBar extends HTMLElement {
 	}
 
 	private setupAria(): void {
-		if (!this.hasAttribute('role')) {
-			this.setAttribute('role', 'progressbar');
+		if (!this.hasAttribute("role")) {
+			this.setAttribute("role", "progressbar");
 		}
-		if (!this.hasAttribute('aria-valuemin')) {
-			this.setAttribute('aria-valuemin', '0');
+		if (!this.hasAttribute("aria-valuemin")) {
+			this.setAttribute("aria-valuemin", "0");
 		}
-		if (!this.hasAttribute('aria-valuemax')) {
-			this.setAttribute('aria-valuemax', '100');
+		if (!this.hasAttribute("aria-valuemax")) {
+			this.setAttribute("aria-valuemax", "100");
 		}
 	}
 
@@ -102,17 +105,24 @@ export class AsciiProgressBar extends HTMLElement {
 	}
 
 	public render(): void {
-		const bar = AsciiProgressRenderer.render(this.progress, this.pattern, this.showProgress, this.length);
+		const bar = AsciiProgressRenderer.render(
+			this.progress,
+			this.pattern,
+			this.showProgress,
+			this.length,
+		);
 		if (this.shadowRoot) {
 			if (!this.preElement) {
-				this.preElement = document.createElement('pre');
+				this.preElement = document.createElement("pre");
 				this.shadowRoot.appendChild(this.preElement);
 			}
 			this.preElement.textContent = bar;
 
 			// Update ARIA valuenow
-			const sanitizedProgress = Number.isNaN(this.progress) ? 0 : Math.min(100, Math.max(0, Math.round(this.progress)));
-			this.setAttribute('aria-valuenow', sanitizedProgress.toString());
+			const sanitizedProgress = Number.isNaN(this.progress)
+				? 0
+				: Math.min(100, Math.max(0, Math.round(this.progress)));
+			this.setAttribute("aria-valuenow", sanitizedProgress.toString());
 		}
 	}
 }

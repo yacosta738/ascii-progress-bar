@@ -1,6 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { AsciiProgressBar } from "../src/ascii-progress-bar";
-import { AsciiProgressRenderer } from "../src/ascii-progress-renderer";
 import type { Pattern } from "../src/types";
 
 describe("AsciiProgressBar", () => {
@@ -135,7 +134,7 @@ describe("AsciiProgressBar", () => {
 		["", true],
 		["true", true],
 		["false", false],
-		["random", true]
+		["random", true],
 	])("should handle show-progress value '%s' correctly", (value, shouldShow) => {
 		const element = document.createElement("ascii-progress-bar");
 		element.setAttribute("progress", "50");

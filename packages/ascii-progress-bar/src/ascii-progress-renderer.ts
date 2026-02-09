@@ -29,7 +29,12 @@ export const AsciiProgressRenderer = {
 		}
 	},
 
-	render(progress: number, patternName = "default", showProgress = true, lengthOverride?: number): string {
+	render(
+		progress: number,
+		patternName = "default",
+		showProgress = true,
+		lengthOverride?: number,
+	): string {
 		AsciiProgressRenderer.initializeDefaultPatterns();
 		const pattern =
 			AsciiProgressRenderer.patternsMap.get(patternName) ||
@@ -37,17 +42,26 @@ export const AsciiProgressRenderer = {
 
 		if (!pattern) {
 			console.warn(`Pattern ${patternName} not found, using default`);
-			return AsciiProgressRenderer.render(progress, "default", showProgress, lengthOverride);
+			return AsciiProgressRenderer.render(
+				progress,
+				"default",
+				showProgress,
+				lengthOverride,
+			);
 		}
 
 		// Clamp progress between 0 and 100 and handle NaN
-		const sanitizedProgress = Number.isNaN(progress) ? 0 : Math.min(100, Math.max(0, progress));
+		const sanitizedProgress = Number.isNaN(progress)
+			? 0
+			: Math.min(100, Math.max(0, progress));
 
 		const { empty, filled, length: patternLength } = pattern;
 		const length = lengthOverride || patternLength;
 		const filledCount = Math.round((sanitizedProgress / 100) * length);
 		const emptyCount = length - filledCount;
-		const progressText = showProgress ? ` ${Math.round(sanitizedProgress)}%` : "";
+		const progressText = showProgress
+			? ` ${Math.round(sanitizedProgress)}%`
+			: "";
 		return `${filled.repeat(filledCount)}${empty.repeat(emptyCount)}${progressText}`;
 	},
 

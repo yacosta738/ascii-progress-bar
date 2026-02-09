@@ -16,6 +16,7 @@
     </style>
     <script type="module">
       import { AsciiProgressBar } from './index.js';
+
       
       customElements.whenDefined('ascii-progress-bar').then(() => {
         // Arrows pattern
@@ -33,7 +34,7 @@
         });
 
         // Re-render existing components
-        document.querySelectorAll('ascii-progress-bar').forEach(bar => bar.render());
+        document.querySelectorAll('ascii-progress-bar').forEach(bar => { bar.render(); });
       });
     </script>
   </head>
