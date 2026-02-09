@@ -11,11 +11,11 @@ banner:
 
 Comienza con implementaciones simples de barras de progreso:
 
-- [Ejemplo en Consola](/ascii-progress-bar/es/examples/console) - Una barra de progreso básica con configuración predeterminada
-- [Ejemplo Web](/ascii-progress-bar/es/examples/web-component) - Muestra una barra de progreso en una página web
+- [Ejemplo en Consola](./console) - Una barra de progreso básica con configuración predeterminada
+- [Ejemplo Web](./web-component) - Muestra una barra de progreso en una página web
 
 ## Personalización
 
 Aprende cómo personalizar la apariencia:
 
-- [Caracteres Personalizados](/ascii-progress-bar/es/examples/chars) - Cambia los caracteres utilizados en la barra de progreso
+- [Caracteres Personalizados](./chars) - Cambia los caracteres utilizados en la barra de progreso

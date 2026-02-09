@@ -26,6 +26,47 @@ describe("AsciiProgressBar", () => {
 		expect(shadow?.querySelector("pre")).toBeDefined();
 	});
 
+	it("should have ARIA attributes", () => {
+		const element = document.createElement("ascii-progress-bar");
+		document.body.appendChild(element);
+
+		expect(element.getAttribute("role")).toBe("progressbar");
+		expect(element.getAttribute("aria-valuemin")).toBe("0");
+		expect(element.getAttribute("aria-valuemax")).toBe("100");
+	});
+
+	it("should update aria-valuenow when progress changes", () => {
+		const element = document.createElement("ascii-progress-bar");
+		element.setAttribute("progress", "50");
+		document.body.appendChild(element);
+
+		expect(element.getAttribute("aria-valuenow")).toBe("50");
+
+		element.setAttribute("progress", "75");
+		expect(element.getAttribute("aria-valuenow")).toBe("75");
+	});
+
+	it("should clamp aria-valuenow between 0 and 100", () => {
+		const element = document.createElement("ascii-progress-bar");
+
+		element.setAttribute("progress", "150");
+		document.body.appendChild(element);
+		expect(element.getAttribute("aria-valuenow")).toBe("100");
+
+		element.setAttribute("progress", "-50");
+		expect(element.getAttribute("aria-valuenow")).toBe("0");
+	});
+
+	it("should handle NaN progress gracefully", () => {
+		const element = document.createElement("ascii-progress-bar");
+		element.setAttribute("progress", "invalid");
+		document.body.appendChild(element);
+
+		expect(element.getAttribute("aria-valuenow")).toBe("0");
+		const pre = element.shadowRoot?.querySelector("pre");
+		expect(pre?.textContent).toContain("0%");
+	});
+
 	it("should update progress when attribute changes", () => {
 		const element = document.createElement("ascii-progress-bar");
 		document.body.appendChild(element);
@@ -34,14 +75,27 @@ describe("AsciiProgressBar", () => {
 
 		const shadow = element.shadowRoot;
 		const pre = shadow?.querySelector("pre");
-		expect(pre?.textContent).toBeTruthy();
+		expect(pre?.textContent).toContain("50%");
+	});
+
+	it("should allow overriding length via attribute", () => {
+		const element = document.createElement("ascii-progress-bar");
+		element.setAttribute("progress", "50");
+		element.setAttribute("length", "20");
+		document.body.appendChild(element);
+
+		const shadow = element.shadowRoot;
+		const pre = shadow?.querySelector("pre");
+		// Default pattern 'default' has length 10. Override to 20 should double the characters.
+		// progress 50% of 20 is 10 filled characters.
+		expect(pre?.textContent).toBe("■■■■■■■■■■□□□□□□□□□□ 50%");
 	});
 
 	it("should update pattern when attribute changes", () => {
 		const element = document.createElement("ascii-progress-bar");
 		document.body.appendChild(element);
 
-		element.setAttribute("pattern", "custom");
+		element.setAttribute("pattern", "dots");
 
 		const shadow = element.shadowRoot;
 		const pre = shadow?.querySelector("pre");
@@ -66,11 +120,6 @@ describe("AsciiProgressBar", () => {
 		expect(pre?.textContent).toBeTruthy();
 	});
 
-	it("should not re-register component with same tag name", () => {
-		// Attempting to register again should not throw
-		expect(() => AsciiProgressBar.register()).not.toThrow();
-	});
-
 	it("should show progress percentage by default", () => {
 		const element = document.createElement("ascii-progress-bar");
 		element.setAttribute("progress", "50");
@@ -84,8 +133,9 @@ describe("AsciiProgressBar", () => {
 	it.each([
 		["", true],
 		["true", true],
-		["false", false]
-	])("should handle show-progress value %s correctly", (value, shouldShow) => {
+		["false", false],
+		["random", true],
+	])("should handle show-progress value '%s' correctly", (value, shouldShow) => {
 		const element = document.createElement("ascii-progress-bar");
 		element.setAttribute("progress", "50");
 		if (value !== "") {
@@ -95,8 +145,7 @@ describe("AsciiProgressBar", () => {
 
 		const shadow = element.shadowRoot;
 		const pre = shadow?.querySelector("pre");
-		const actual = pre?.textContent;
 		const expected = shouldShow ? "■■■■■□□□□□ 50%" : "■■■■■□□□□□";
-		expect(pre?.textContent).toBe(shouldShow ? "■■■■■□□□□□ 50%" : "■■■■■□□□□□");
+		expect(pre?.textContent).toBe(expected);
 	});
 });

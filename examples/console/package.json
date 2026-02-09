@@ -8,7 +8,13 @@
 		"clean": "rm -rf dist",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"keywords": ["progress", "progress bar", "ascii", "ascii art", "console"],
+	"keywords": [
+		"progress",
+		"progress bar",
+		"ascii",
+		"ascii art",
+		"console"
+	],
 	"author": {
 		"name": "Yuniel Acosta",
 		"email": "stray-hefts.3o@icloud.com",
