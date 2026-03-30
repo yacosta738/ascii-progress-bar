@@ -48,13 +48,13 @@
 	"homepage": "https://github.com/yacosta738/ascii-progress-bar#readme",
 	"devDependencies": {
 		"tsup": "^8.5.1",
-		"jsdom": "^28.0.0",
-		"vitest": "^4.0.18",
+		"jsdom": "^29.0.1",
+		"vitest": "^4.1.2",
 		"semantic-release": "^25.0.3",
 		"@semantic-release/changelog": "^6.0.3",
 		"@semantic-release/git": "^10.0.1",
-		"@semantic-release/github": "^12.0.5",
-		"@semantic-release/npm": "^13.1.4",
+		"@semantic-release/github": "^12.0.6",
+		"@semantic-release/npm": "^13.1.5",
 		"@semantic-release/release-notes-generator": "^14.1.0",
 		"@semantic-release/exec": "^7.1.0"
 	},
