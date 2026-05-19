@@ -17,14 +17,14 @@
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.9",
-		"@astrojs/starlight": "^0.37.6",
+		"@astrojs/starlight": "^0.39.2",
 		"@yacosta738/ascii-progress-bar": "workspace:*",
-		"astro": "^5.17.1",
+		"astro": "^6.3.5",
 		"sharp": "^0.34.5"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.15",
-		"typescript": "^5.9.3"
+		"typescript": "^6.0.3"
 	},
 	"packageManager": "pnpm@10.0.0+sha512.b8fef5494bd3fe4cbd4edabd0745df2ee5be3e4b0b8b08fa643aa3e4c6702ccc0f00d68fa8a8c9858a735a0032485a44990ed2810526c875e416f001b17df12b"
 }

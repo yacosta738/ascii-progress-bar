@@ -9,7 +9,8 @@
 		"strict": true,
 		"moduleResolution": "node",
 		"esModuleInterop": true,
-		"skipLibCheck": true
+		"skipLibCheck": true,
+		"ignoreDeprecations": "6.0"
 	},
 	"include": ["src", "tests/ascii-progress-bar.test.ts"],
 	"exclude": ["node_modules", "dist"]
