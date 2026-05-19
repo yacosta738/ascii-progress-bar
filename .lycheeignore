@@ -1,0 +1,5 @@
+# Exclude npm package URL (returns 403 for automated requests)
+https://www.npmjs.com/package/@yacosta738/ascii-progress-bar
+
+# Exclude file:// protocol links (Starlight uses extensionless routing)
+file://.*

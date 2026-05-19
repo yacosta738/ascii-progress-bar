@@ -1,0 +1,23 @@
+# Lychee link checker configuration
+# https://lychee.cli.rs/#/usage/config
+
+# Maximum number of concurrent network requests
+max_concurrency = 10
+
+# Accept HTTP status codes as valid
+accept = [200, 201, 204, 301, 302, 307, 308, 429]
+
+# Timeout for network requests (in seconds)
+timeout = 20
+
+# Number of retries for failed requests
+max_retries = 3
+
+# User agent string
+user_agent = "Mozilla/5.0 (compatible; lychee/0.18.1)"
+
+# Include verbosity for debugging
+verbose = "warn"
+
+# Only check http and https schemes (skip file:// protocol)
+scheme = ["https", "http"]
