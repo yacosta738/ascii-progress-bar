@@ -1,3 +1,21 @@
+# [1.8.0](https://github.com/yacosta738/ascii-progress-bar/compare/v1.7.0...v1.8.0) (2026-05-20)
+
+
+### Bug Fixes
+
+* **ci:** configure lychee to handle Starlight routing and npm 403 errors ([dad88ea](https://github.com/yacosta738/ascii-progress-bar/commit/dad88ea569f04e9760217114b9fa1fd62476d418))
+* **ci:** configure npm authentication with .npmrc for semantic-release ([35f2e07](https://github.com/yacosta738/ascii-progress-bar/commit/35f2e078a70b8bf9bae95f093d4877921bc2445d))
+* **ci:** remove node_modules cache to avoid conflict with Astro action ([3c07e9f](https://github.com/yacosta738/ascii-progress-bar/commit/3c07e9f0a734d239a4f32018ad01bbf01b010f7d))
+* **ci:** update Node.js version and fix cache paths ([90bf37a](https://github.com/yacosta738/ascii-progress-bar/commit/90bf37ae985657bb942fa2107ff7644d7406f939))
+* **ci:** use NPM_TOKEN instead of NODE_AUTH_TOKEN for semantic-release ([07b0ef0](https://github.com/yacosta738/ascii-progress-bar/commit/07b0ef0f90379eb144235d25fd11c3474fcc6105))
+* resolve security vulnerabilities and workflow permissions ([21dba1b](https://github.com/yacosta738/ascii-progress-bar/commit/21dba1b5bd7564f2f10d5a4704910261b6013eae)), closes [#17](https://github.com/yacosta738/ascii-progress-bar/issues/17) [#13](https://github.com/yacosta738/ascii-progress-bar/issues/13) [#12](https://github.com/yacosta738/ascii-progress-bar/issues/12) [#103](https://github.com/yacosta738/ascii-progress-bar/issues/103) [#102](https://github.com/yacosta738/ascii-progress-bar/issues/102) [#94](https://github.com/yacosta738/ascii-progress-bar/issues/94) [#93](https://github.com/yacosta738/ascii-progress-bar/issues/93) [#84](https://github.com/yacosta738/ascii-progress-bar/issues/84) [#82](https://github.com/yacosta738/ascii-progress-bar/issues/82)
+* update yaml dependency resolution to fix remaining vulnerability ([15507bc](https://github.com/yacosta738/ascii-progress-bar/commit/15507bc3301b348a0bf62b096d76c5c3d8d554a4)), closes [#84](https://github.com/yacosta738/ascii-progress-bar/issues/84)
+
+
+### Features
+
+* enhance AsciiProgressBar with a11y, performance, and length override ([#49](https://github.com/yacosta738/ascii-progress-bar/issues/49)) ([07c61ea](https://github.com/yacosta738/ascii-progress-bar/commit/07c61eafd40817a85fc5d5b307e37c24c931bd1d))
+
 # [1.7.0](https://github.com/yacosta738/ascii-progress-bar/compare/v1.6.0...v1.7.0) (2025-01-27)
 
 
