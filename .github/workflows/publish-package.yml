@@ -52,7 +52,6 @@ jobs:
       - name: Semantic Release
         working-directory: packages/ascii-progress-bar
         env:
-          # Use GITHUB_TOKEN with write permissions
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
