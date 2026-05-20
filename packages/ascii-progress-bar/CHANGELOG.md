@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/yacosta738/ascii-progress-bar/compare/v1.8.0...v1.8.1) (2026-05-20)
+
+
+### Bug Fixes
+
+* **ci:** disable cache in withastro/action to prevent post-cleanup error ([bf50544](https://github.com/yacosta738/ascii-progress-bar/commit/bf50544872cea11eae0f9bc05c228f307c5cf3cc))
+
 # [1.8.0](https://github.com/yacosta738/ascii-progress-bar/compare/v1.7.0...v1.8.0) (2026-05-20)
 
 
