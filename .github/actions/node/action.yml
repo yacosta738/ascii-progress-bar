@@ -12,7 +12,7 @@ runs:
     - name: Setup Node
       uses: actions/setup-node@v4
       with:
-        node-version: '22.13.1'
+        node-version: '22.14.0'
         cache: pnpm
         registry-url: 'https://registry.npmjs.org'
 
@@ -32,8 +32,12 @@ runs:
     - uses: actions/cache@v4
       name: Cache node_modules
       with:
-        path: node_modules
+        path: |
+          node_modules
+          **/node_modules
         key: ${{ runner.os }}-node-modules-${{ hashFiles('pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-node-modules-
 
     - name: 'Verify Tools Installation'
       shell: bash
