@@ -49,6 +49,11 @@ jobs:
         working-directory: packages/ascii-progress-bar
         run: pnpm build
 
+      - name: Configure npm authentication
+        working-directory: packages/ascii-progress-bar
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+
       - name: Semantic Release
         working-directory: packages/ascii-progress-bar
         env:
