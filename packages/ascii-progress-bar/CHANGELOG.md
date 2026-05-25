@@ -15,13 +15,13 @@
 * **ci:** remove node_modules cache to avoid conflict with Astro action ([3c07e9f](https://github.com/yacosta738/ascii-progress-bar/commit/3c07e9f0a734d239a4f32018ad01bbf01b010f7d))
 * **ci:** update Node.js version and fix cache paths ([90bf37a](https://github.com/yacosta738/ascii-progress-bar/commit/90bf37ae985657bb942fa2107ff7644d7406f939))
 * **ci:** use NPM_TOKEN instead of NODE_AUTH_TOKEN for semantic-release ([07b0ef0](https://github.com/yacosta738/ascii-progress-bar/commit/07b0ef0f90379eb144235d25fd11c3474fcc6105))
-* resolve security vulnerabilities and workflow permissions ([21dba1b](https://github.com/yacosta738/ascii-progress-bar/commit/21dba1b5bd7564f2f10d5a4704910261b6013eae)), closes [#17](https://github.com/yacosta738/ascii-progress-bar/issues/17) [#13](https://github.com/yacosta738/ascii-progress-bar/issues/13) [#12](https://github.com/yacosta738/ascii-progress-bar/issues/12) [#103](https://github.com/yacosta738/ascii-progress-bar/issues/103) [#102](https://github.com/yacosta738/ascii-progress-bar/issues/102) [#94](https://github.com/yacosta738/ascii-progress-bar/issues/94) [#93](https://github.com/yacosta738/ascii-progress-bar/issues/93) [#84](https://github.com/yacosta738/ascii-progress-bar/issues/84) [#82](https://github.com/yacosta738/ascii-progress-bar/issues/82)
-* update yaml dependency resolution to fix remaining vulnerability ([15507bc](https://github.com/yacosta738/ascii-progress-bar/commit/15507bc3301b348a0bf62b096d76c5c3d8d554a4)), closes [#84](https://github.com/yacosta738/ascii-progress-bar/issues/84)
+* resolve security vulnerabilities and workflow permissions ([21dba1b](https://github.com/yacosta738/ascii-progress-bar/commit/21dba1b5bd7564f2f10d5a4704910261b6013eae)), closes [#17](https://github.com/yacosta738/ascii-progress-bar/issues/17)
+* update yaml dependency resolution to fix remaining vulnerability ([15507bc](https://github.com/yacosta738/ascii-progress-bar/commit/15507bc3301b348a0bf62b096d76c5c3d8d554a4))
 
 
 ### Features
 
-* enhance AsciiProgressBar with a11y, performance, and length override ([#49](https://github.com/yacosta738/ascii-progress-bar/issues/49)) ([07c61ea](https://github.com/yacosta738/ascii-progress-bar/commit/07c61eafd40817a85fc5d5b307e37c24c931bd1d))
+* enhance AsciiProgressBar with a11y, performance, and length override ([#49](https://github.com/yacosta738/ascii-progress-bar/issues/49)) ([07c61ea](https://github.com/yacosta738/ascii-progress-bar/commit/07c61eaaf1d40ebc7264892d8c8fe691d31b1c7d))
 
 # [1.7.0](https://github.com/yacosta738/ascii-progress-bar/compare/v1.6.0...v1.7.0) (2025-01-27)
 
@@ -39,7 +39,7 @@
 
 ### Features
 
-* Add show-progress attribute to control visibility of progress percentage ([#13](https://github.com/yacosta738/ascii-progress-bar/issues/13)) ([952a413](https://github.com/yacosta738/ascii-progress-bar/commit/952a41353733e1c434336b5f1c386fc133623c56))
+* Add show-progress attribute to control visibility of progress percentage ([#13](https://github.com/yacosta738/ascii-progress-bar/issues/13)) ([952a413](https://github.com/yacosta738/ascii-progress-bar/commit/952a4136b1a7b2c2bd4cbf22c42754a321b9e9a7))
 
 ## [1.5.1](https://github.com/yacosta738/ascii-progress-bar/compare/v1.5.0...v1.5.1) (2025-01-26)
 
@@ -67,7 +67,7 @@
 
 ### Features
 
-* Add internationalization support with new i18n examples and update content configuration ([9cf4723](https://github.com/yacosta738/ascii-progress-bar/commit/9cf4723982828ede700d6226099dffcf1facdfc4))
+* Add internationalization support with new i18n examples and update content configuration ([9cf4723](https://github.com/yacosta738/ascii-progress-bar/commit/9cf4723982828ede700d6226099dffcf1facdf7b))
 
 # [1.2.0](https://github.com/yacosta738/ascii-progress-bar/compare/v1.1.0...v1.2.0) (2025-01-20)
 
@@ -111,7 +111,7 @@
 * Add site configuration for GitHub Pages in astro.config.mjs ([cf0bb74](https://github.com/yacosta738/ascii-progress-bar/commit/cf0bb74b7f5327f7cd89118495ac23c4766fcb27))
 * Add type checking step to workflows and update type imports ([c421d64](https://github.com/yacosta738/ascii-progress-bar/commit/c421d6473a59e191f8bbc24cf9c7f6dc7c478704))
 * Add Vitest configuration and tests for AsciiProgressBar component ([10273ed](https://github.com/yacosta738/ascii-progress-bar/commit/10273edae86222c50b964fe7c9cad1ea53eced0e))
-* Enhance README with detailed documentation, quick start guide, and project structure overview ([3114cb9](https://github.com/yacosta738/ascii-progress-bar/commit/3114cb92ff6b938f60a18f847b6f1e054beb8acb))
+* Enhance README with detailed documentation, quick start guide, and project structure overview ([3114cb9](https://github.com/yacosta738/ascii-progress-bar/commit/3114cb92ff6b938f60a18f847b6f1e0563b12cb4))
 * Implement semantic release for automated package publishing ([6ec3cc3](https://github.com/yacosta738/ascii-progress-bar/commit/6ec3cc3a1e7febf77954136701bfbe1c6783aecd))
 * Refactor preinstall script in package.json for improved package build process ([c1b130d](https://github.com/yacosta738/ascii-progress-bar/commit/c1b130d212a6274187011e07b04ad5811fe29341))
 * Set base configuration for ASCII progress bar in astro.config.mjs ([1242deb](https://github.com/yacosta738/ascii-progress-bar/commit/1242deb615fed869885b07eb9f944ab45ccdf4aa))
