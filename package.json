@@ -19,7 +19,7 @@
 		"@astrojs/check": "^0.9.9",
 		"@astrojs/starlight": "^0.39.2",
 		"@yacosta738/ascii-progress-bar": "workspace:*",
-		"astro": "^6.3.5",
+		"astro": "^6.3.7",
 		"sharp": "^0.34.5"
 	},
 	"devDependencies": {
