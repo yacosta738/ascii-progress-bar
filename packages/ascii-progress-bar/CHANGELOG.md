@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/yacosta738/ascii-progress-bar/compare/v1.8.1...v1.8.2) (2026-07-11)
+
+
+### Bug Fixes
+
+* **ci:** add --root flag to lychee for root-relative link resolution ([#87](https://github.com/yacosta738/ascii-progress-bar/issues/87)) ([9f3a55a](https://github.com/yacosta738/ascii-progress-bar/commit/9f3a55ad0de33112b82cb90385c2b439978ab4bf))
+
 ## [1.8.1](https://github.com/yacosta738/ascii-progress-bar/compare/v1.8.0...v1.8.1) (2026-05-20)
 
 
