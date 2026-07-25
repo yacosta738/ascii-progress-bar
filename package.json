@@ -20,7 +20,7 @@
 		"@astrojs/starlight": "^0.39.2",
 		"@yacosta738/ascii-progress-bar": "workspace:*",
 		"astro": "^6.3.7",
-		"sharp": "^0.34.5"
+		"sharp": "^0.35.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.15",
