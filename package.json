@@ -16,15 +16,15 @@
 		"check": "pnpm biome check --write . && astro check"
 	},
 	"dependencies": {
-		"@astrojs/check": "^0.9.9",
-		"@astrojs/starlight": "^0.39.2",
+		"@astrojs/check": "^0.9.10",
+		"@astrojs/starlight": "^0.41.5",
 		"@yacosta738/ascii-progress-bar": "workspace:*",
-		"astro": "^6.3.7",
-		"sharp": "^0.34.5"
+		"astro": "^7.1.6",
+		"sharp": "^0.35.3"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.4.15",
-		"typescript": "^6.0.3"
+		"@biomejs/biome": "2.5.6",
+		"typescript": "^7.0.2"
 	},
 	"resolutions": {
 		"lodash": ">=4.18.0",
