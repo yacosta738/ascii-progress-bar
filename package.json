@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"update-deps": "pnpm update -i -r --latest",
-		"preinstall": "npx only-allow pnpm && pnpm run build:packages",
+		"preinstall": "npx only-allow pnpm",
 		"build": "pnpm -r build && astro build",
 		"build:packages": "pnpm --filter './packages/**' build",
 		"test": "pnpm -r test",
