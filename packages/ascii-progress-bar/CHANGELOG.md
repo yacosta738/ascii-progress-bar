@@ -1,3 +1,10 @@
+## [1.8.4](https://github.com/yacosta738/ascii-progress-bar/compare/v1.8.3...v1.8.4) (2026-10-30)
+
+
+### Bug Fixes
+
+* **ci:** update cleanup workflow to use gh cache and add pull request input ([a3796e8](https://github.com/yacosta738/ascii-progress-bar/commit/a3796e8abc8c0916925dbc7d8e81b3b6a064e41d))
+
 ## [1.8.3](https://github.com/yacosta738/ascii-progress-bar/compare/v1.8.2...v1.8.3) (2026-10-30)
 
 
