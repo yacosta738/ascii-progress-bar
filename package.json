@@ -16,14 +16,14 @@
 		"check": "pnpm biome check --write . && astro check"
 	},
 	"dependencies": {
-		"@astrojs/check": "^0.9.9",
-		"@astrojs/starlight": "^0.39.2",
+		"@astrojs/check": "^0.9.12",
+		"@astrojs/starlight": "^0.42.8",
 		"@yacosta738/ascii-progress-bar": "workspace:*",
-		"astro": "^6.3.7",
-		"sharp": "^0.34.5"
+		"astro": "^7.4.4",
+		"sharp": "^0.35.3"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.4.15",
+		"@biomejs/biome": "2.6.4",
 		"typescript": "^6.0.3"
 	},
 	"resolutions": {
@@ -32,5 +32,5 @@
 		"yaml": ">=2.8.3",
 		"picomatch": ">=4.0.4"
 	},
-	"packageManager": "pnpm@10.0.0+sha512.b8fef5494bd3fe4cbd4edabd0745df2ee5be3e4b0b8b08fa643aa3e4c6702ccc0f00d68fa8a8c9858a735a0032485a44990ed2810526c875e416f001b17df12b"
+	"packageManager": "pnpm@10.34.9+sha512.f49b5a8ea0fdedb44bb3c0c1d6575092a53c2950d95b7ad15df11f17974877a2de3a01c07e934e9b28ce716e51c09a94962c7306d09be2e1e4b18a8c8762fd32"
 }
