@@ -1,3 +1,10 @@
+## [1.8.3](https://github.com/yacosta738/ascii-progress-bar/compare/v1.8.2...v1.8.3) (2026-10-30)
+
+
+### Bug Fixes
+
+* **ci:** replace deprecated cache cleanup extension ([#114](https://github.com/yacosta738/ascii-progress-bar/issues/114)) ([7ac7a81](https://github.com/yacosta738/ascii-progress-bar/commit/7ac7a816116b4d853db3ba0213caeb1d09ca2da9))
+
 ## [1.8.2](https://github.com/yacosta738/ascii-progress-bar/compare/v1.8.1...v1.8.2) (2026-07-11)
 
 

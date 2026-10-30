@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v7
@@ -31,17 +31,17 @@ jobs:
         run: pnpm test
         
       - name: Install, build, and upload your site
-        uses: withastro/action@v4
+        uses: withastro/action@v6
         with:
           cache: false
 
   deploy:
     needs: build
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
