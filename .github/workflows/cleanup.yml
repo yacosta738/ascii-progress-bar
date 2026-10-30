@@ -5,43 +5,38 @@ on:
     types:
       - closed
   workflow_dispatch:
+    inputs:
+      pull_request_number:
+        description: Pull request number whose merge-ref caches should be deleted
+        required: true
+        type: string
 
-env:
-  PBOT_GITHUB_TOKEN: ${{ secrets.PBOT_GITHUB_TOKEN }}    
-    
 jobs:
   cleanup:
     runs-on: ubuntu-latest
     permissions:
       actions: write
-      contents: read
     steps:
-      - name: 🔍 PBOT_GITHUB_TOKEN
-        if: env.PBOT_GITHUB_TOKEN == ''
+      - name: Delete pull request caches
         env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: echo "PBOT_GITHUB_TOKEN=${GITHUB_TOKEN}" >> $GITHUB_ENV    
-
-      - name: Check out code
-        uses: actions/checkout@v7
-
-      - name: Cleanup
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number || inputs.pull_request_number }}
         run: |
-          gh extension install actions/gh-actions-cache
+          case "$PULL_REQUEST_NUMBER" in
+            ''|*[!0-9]*|0)
+              echo "A positive pull request number is required." >&2
+              exit 1
+              ;;
+          esac
 
-          REPO=${{ github.repository }}
-          BRANCH="refs/pull/${{ github.event.pull_request.number }}/merge"
+          BRANCH="refs/pull/${PULL_REQUEST_NUMBER}/merge"
 
-          echo "Fetching list of cache key"
-          cacheKeysForPR=$(gh actions-cache list -R $REPO -B $BRANCH | cut -f 1 )
+          echo "Fetching cache IDs for $BRANCH"
+          cacheIds=$(gh cache list --ref "$BRANCH" --limit 100 --json id --jq '.[].id')
 
-          ## Setting this to not fail the workflow while deleting cache keys. 
-          set +e
           echo "Deleting caches..."
-          for cacheKey in $cacheKeysForPR
-          do
-              gh actions-cache delete $cacheKey -R $REPO -B $BRANCH --confirm
+          for cacheId in $cacheIds; do
+            gh cache delete "$cacheId" || true
           done
           echo "Done"
-        env:
-          GH_TOKEN: ${{ env.PBOT_GITHUB_TOKEN }}
