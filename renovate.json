@@ -1,4 +1,34 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["config:recommended"]
+	"extends": ["config:recommended"],
+	"enabledManagers": ["npm", "github-actions"],
+	"dependencyDashboard": true,
+	"assignees": ["yacosta738"],
+	"labels": ["dependencies"],
+	"schedule": ["before 4am on monday"],
+	"prConcurrentLimit": 5,
+	"prHourlyLimit": 2,
+	"packageRules": [
+		{
+			"description": "Group non-major npm updates into a manageable review",
+			"matchManagers": ["npm"],
+			"matchUpdateTypes": ["patch", "minor"],
+			"groupName": "npm dependencies (non-major)"
+		},
+		{
+			"description": "Group non-major GitHub Actions updates separately",
+			"matchManagers": ["github-actions"],
+			"matchUpdateTypes": ["patch", "minor"],
+			"groupName": "GitHub Actions (non-major)",
+			"addLabels": ["github_actions"]
+		},
+		{
+			"description": "Keep major updates separate for compatibility review",
+			"matchUpdateTypes": ["major"]
+		}
+	],
+	"lockFileMaintenance": {
+		"enabled": true,
+		"schedule": ["before 4am on monday"]
+	}
 }
